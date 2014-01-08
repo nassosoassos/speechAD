@@ -1,0 +1,51 @@
+###########################################################################
+#
+# File:         SConscript (directory: py/onyx/audio)
+# Date:         5-Dec-2007
+# Author:       Hugh Secker-Walker
+# Description:  SConscript file for the audio utilities directory
+#
+# This file is part of Onyx   http://onyxtools.sourceforge.net
+#
+# Copyright 2007 - 2009 The Johns Hopkins University
+#
+# Licensed under the Apache License, Version 2.0 (the "License").
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.  See the License for the specific language governing
+# permissions and limitations under the License.
+#
+###########################################################################
+
+# standard Onyx treatment of Python code
+Import('env')
+env.DocBuildThisPackage("Audio")
+env.PyFile('__init__.py')
+env.PyFile('unshorten.py', doctest_files=['shorten.shn'])
+
+audiodata = env.PyFile('audiodata.py', doctest_files=['zero.wav', 'zero.sph', 'problem.sph', 'shorten.sph', 'seven.mp3', 'problem.mp3'])
+# see also cpp/liveaudio/SConscript for the C side of sndfilewrap_base
+sndfilewrap_base = 'sndfilewrap'
+mpg123wrap_base = 'mpg123wrap'
+for lib_base in (sndfilewrap_base, mpg123wrap_base):
+    env.PylibDepends(audiodata, lib_base)
+
+env.PyFile('asciivumeter.py', no_test=True, no_doc=True)
+
+if env['PLATFORM'] == 'darwin':
+    audiobase = env.PyFile('audiobase.py')
+    liveaudio = env.PyFile('liveaudio.py')
+
+    # See also code in cpp/liveaudio/SConscript that uses the same shared name
+    # and that puts the shared library where it can be found
+    audiomodule_shared_base = '_audio'
+    # tell SCons about these shared library dependencies
+    env.PylibDepends(audiobase + liveaudio, audiomodule_shared_base)
+else:
+    env.PyFile('audiobase.py', no_test=True, no_doc=True)
+    env.PyFile('liveaudio.py', no_test=True, no_doc=True)

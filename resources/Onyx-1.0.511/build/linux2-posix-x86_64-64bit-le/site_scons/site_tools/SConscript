@@ -1,0 +1,16 @@
+##############################################################################
+#
+# File:         SConscript (directory: ./site_scons/site_tools)
+# Date:         5-Oct-2007
+# Author:       Hugh Secker-Walker
+# Description:  Verify site-specific SCons tools
+#
+# Copyright 2007, The Johns Hopkins University.  All rights reserved.  
+#
+##############################################################################
+
+# standard Onyx treatment of Python code
+Import('env')
+env.PyFile('ProjectTools.py', tool_file=True)
+env.PyFile('PyTools.py', tool_file=True)
+

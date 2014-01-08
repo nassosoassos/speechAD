@@ -1,0 +1,45 @@
+###########################################################################
+#
+# File:         SConscript (directory: ./py/onyx/am)
+# Date:         Tue 6 Nov 2007 17:37
+# Author:       Ken Basye
+# Description:  Acoustic Modeling
+#
+# This file is part of Onyx   http://onyxtools.sourceforge.net
+#
+# Copyright 2007 - 2009 The Johns Hopkins University
+#
+# Licensed under the Apache License, Version 2.0 (the "License").
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.  See the License for the specific language governing
+# permissions and limitations under the License.
+#
+###########################################################################
+
+Import('env')
+env.DocBuildThisPackage("Acoustic Modeling")
+
+import os
+monophones = env.File(os.path.join('#', 'py/onyx/htkfiles/monophones.mmf'))
+
+env.PyFile('__init__.py', no_test=True)
+env.PyFile('gaussian.py', logref='gaussian.log-ref')
+env.PyFile('hmm.py', logref='hmm.log-ref')
+env.PyFile('bwtrainer.py', logref='bwtrainer.log-ref')
+env.PyFile('modelmgr.py')
+env.PyFile('hmm_mgr.py', doctest_files=[monophones])
+env.PyFile('classifier.py', logref='classifier.log-ref')
+env.PyFile('acctrack.py')
+env.PyFile('testhmm.py', logref='testhmm.log-ref')
+env.PyFile('testhmm2.py', logref='testhmm2.log-ref')
+env.PyFile('testbwt.py', logref='testbwt.log-ref')
+
+
+
+

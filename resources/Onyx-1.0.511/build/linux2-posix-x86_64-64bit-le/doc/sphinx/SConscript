@@ -1,0 +1,77 @@
+###########################################################################
+#
+# File:         SConscript (directory: ./doc/sphinx)
+# Date:         8-April-2009
+# Author:       Ken Basye
+# Description:  Builds Sphinx-based documentation
+#
+# This file is part of Onyx   http://onyxtools.sourceforge.net
+#
+# Copyright 2009 The Johns Hopkins University
+#
+# Licensed under the Apache License, Version 2.0 (the "License").
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.  See the License for the specific language governing
+# permissions and limitations under the License.
+#
+###########################################################################
+
+
+Import('env')
+
+# Two helper files used from Sphinx
+conf = env.PyFile("conf.py", no_test=True)
+autosect = env.PyFile("extensions/auto_section.py", no_test=True)
+
+# These are the hand-built reST files
+rst_files = (
+    "contents.rst",
+
+    'user.rst',
+    'toplevelorg.rst',
+    "core.rst",
+    "intro.rst",
+#    "projects.rst",
+#    "sandbox.rst",
+    "developer.rst",
+    "tutorials.rst",
+
+#    'vision.rst',
+#    'faq.rst',
+
+    'glossary.rst',
+    )
+rst_nodes = tuple(env.File(rst_file) for rst_file in rst_files)
+
+# static content for sphinx
+static_dir = 'static'
+static_files = (
+    'onyx.css',
+    'onyx3.png',
+    )
+static_nodes = tuple(env.File(static_dir + '/' + static_file) for static_file in static_files)
+
+
+# template files for sphinx
+template_dir = 'templates'
+template_files = (
+    'index.html',
+#    'indexsidebar.html',
+    'layout.html',
+    )
+template_nodes = tuple(env.File(template_dir + '/' + template_file) for template_file in template_files)
+
+
+# all these files are needed by the doc build, so we pass this sequence to
+# SphinxDocBuild
+aux_scons_sources = (conf, autosect) + rst_nodes + static_nodes + template_nodes
+
+# We do doc builds on Macs and on Posix, e.g. the cluster machines
+if env['PLATFORM'] in ('darwin', 'posix'):
+    env.SphinxDocBuild(env.Dir('.').path, aux_scons_sources, env.Dir('.').srcnode().path)

@@ -1,0 +1,3 @@
+run_function: my_func ( 'a', 'b', 'c' )
+('a', 'b', 'c')
+

@@ -1,0 +1,48 @@
+###########################################################################
+#
+# File:         htk_mfcc.dot (directory: doc/images)
+# Date:         2009-01-14 Wed 10:51:51
+# Author:       Ken Basye
+# Description:  Graphical image of a signal processing
+#
+# This file is part of Onyx   http://onyxtools.sourceforge.net
+#
+# Copyright 2009 The Johns Hopkins University
+#
+# Licensed under the Apache License, Version 2.0 (the "License").
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.  See the License for the specific language governing
+# permissions and limitations under the License.
+#
+###########################################################################
+
+digraph  { 
+  rankdir=LR
+  n00  [label="stereoselect"];
+  n01  [label="Preemphasis"];
+  n02  [label="SlidingWindow"];
+  n03  [label="remove_dc"];
+  n04  [label="Hamming"];
+  n05  [label="fft_abs"];
+  n06  [label="power"];
+  n07  [label="MelFilterBank"];
+  n08  [label="log"];
+  n09  [label="DCT"];
+  n10  [label="lift"];
+  n00 -> n01;
+  n01 -> n02;
+  n02 -> n03;
+  n03 -> n04;
+  n04 -> n05;
+  n05 -> n06;
+  n06 -> n07;
+  n07 -> n08;
+  n08 -> n09;
+  n09 -> n10;
+}

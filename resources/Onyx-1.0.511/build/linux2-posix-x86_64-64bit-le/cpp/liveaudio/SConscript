@@ -1,0 +1,191 @@
+###########################################################################
+#
+# File:         SConscript (directory: cpp/liveaudio)
+# Date:         30-Oct-2007
+# Author:       Hugh Secker-Walker
+# Description:  Build and run simple live audio and expose functions to Python
+#
+# This file is part of Onyx   http://onyxtools.sourceforge.net
+#
+# Copyright 2007 - 2009 The Johns Hopkins University
+#
+# Licensed under the Apache License, Version 2.0 (the "License").
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.  See the License for the specific language governing
+# permissions and limitations under the License.
+#
+###########################################################################
+
+Import('env')
+
+debug = False
+
+
+import sys
+import os
+from distutils import sysconfig
+
+# our pre-processor defines
+cppdefines = 'DEBUG=1'
+
+# Stuff from distutils used for all platforms
+cpppath = [sysconfig.get_python_inc()]
+shlibsuffix = sysconfig.get_config_var('SO')
+
+# For each platform we need to fill in these items
+shlinkflags = ''
+shlibprefix = ''
+libpath = []
+libs = []
+
+if sys.platform == 'darwin':
+    # Mac OS X has a clever runtime and doesn't need much to link the shared library
+    shlinkflags = env.subst('$LINKFLAGS -bundle -undefined dynamic_lookup')
+    cpppath.append('/opt/local/include'),
+    libpath.append('/opt/local/lib'),
+    libs = []
+else:
+    shlinkflags = env.subst('$SHLINKFLAGS')
+    libname, libdir = sysconfig.get_config_vars('LDLIBRARY', 'LIBDIR')
+    libpath = ['/usr/local/lib']
+    if libdir not in libpath:
+        libpath.append(libdir)
+    # don't set shlibprefix on the built library
+    Xshlibprefix = env.subst('$SHLIBPREFIX')
+    if libname.startswith(Xshlibprefix):
+        libname = libname[len(Xshlibprefix):]
+    if libname.endswith(shlibsuffix):
+        libname = libname[:-len(shlibsuffix)]
+    libs = [libname]
+
+
+# XXX hack for third-party shared libraries on a 64-bit network
+import platform
+if platform.architecture()[0] == '64bit':
+    import os
+    base = '/export/local'
+    for prefix in ('libsndfile-1.0.19', 'mpg123-1.7.2'):
+        cpppath.append(os.path.join(base, prefix, 'include'))
+
+        ld_library_path = os.path.join(base, prefix, 'lib')
+        libpath.append(ld_library_path)
+        env.AppendENVPath('LD_LIBRARY_PATH', ld_library_path)
+
+if debug:
+    print 'CPPDEFINES', repr(cppdefines)
+    print 'CPPPATH', repr(cpppath)
+    print 'SHLIBPREFIX', repr(shlibprefix)
+    print 'SHLIBSUFFIX', repr(shlibsuffix)
+    print 'SHLINKFLAGS', repr(shlinkflags)
+    print 'LIBPATH', repr(libpath)
+    print 'LIBS', repr(libs)
+
+
+if env['PLATFORM'] == 'darwin':
+
+    FRAMEWORKS=['CoreAudio', 'AudioToolbox', 'AudioUnit', 'Carbon']
+
+    cpp_base_files = (
+        'audio.cpp',
+        'LiveAudioInput.cpp',
+
+##         'audio2.cpp',
+##         'audio3.cpp',
+##         'AudioDevice.cpp',
+##         'AudioRingBuffer2.cpp',
+##         'CAPlayThrough.cpp',
+
+        )
+
+    cpp_wrapper_files = (
+        'audiomodule.cpp',
+        )
+
+    CPPDEFINES ='DEBUG=1'
+
+##     CPPPATH = ['/Developer/Examples/CoreAudio/PublicUtility/', '/Library/Frameworks/Python.framework/Headers']
+##     CPPPATH = ['/Developer/Examples/CoreAudio/PublicUtility/', '/opt/local/include/python2.5']
+##     CPPPATH = ['/opt/local/include/python2.5']
+##     LINKFLAGS = '-dynamic -framework CoreAudio -framework AudioToolbox -framework AudioUnit -framework Carbon'
+##     LIBPATH = '/Library/Frameworks/Python.framework/Versions/2.5/lib/python2.5/config'
+##     LIBPATH = '/opt/local/lib'
+##     LIBS=['python2.5']
+
+    audio_lib = env.StaticLibrary('audio', cpp_base_files,
+                                  CPPDEFINES=CPPDEFINES)
+
+##     audio_lib_shared = env.SharedLibrary('audio', cpp_base_files + cpp_wrapper_files,
+##                                          CPPDEFINES=CPPDEFINES,
+##                                          CPPPATH=CPPPATH,
+##                                          FRAMEWORKS=FRAMEWORKS,
+## ##                                          LINKFLAGS=LINKFLAGS,
+##                                          LIBPATH=LIBPATH,
+##                                          LIBS=LIBS,
+##                                          )
+
+    # note: main_exe may contain multiple items, e.g. PDB file
+    main_exe = env.Program('main', ['main.cpp', audio_lib],
+                           FRAMEWORKS=FRAMEWORKS)
+
+    # run the test to generate a trial log file, then verify this file against the reference
+    # note: use 0 index on SOURCES to ensure using just the executable item in the exe list
+    env.Command('main.log-trial', main_exe,
+                '${SOURCES[0]} > $TARGET')
+    env.Diff('main.log-diff', ['main.log-ref', 'main.log-trial'])
+
+
+    # work for wrapping the liveaudio code for Python
+
+    # See also code in py/onyx/audio/SConscript that uses the same basename.
+    audiomodule_shared_base = '_audio'
+    audiomodule_lib_shared = env.SharedLibrary(audiomodule_shared_base,
+                                               ['LiveAudioInput.cpp', 'audiomodule.cpp'],
+                                               CPPDEFINES=cppdefines,
+                                               CPPPATH=cpppath,
+                                               CPPFLAGS='$CPPFLAGS -Wno-multichar -Wno-write-strings',
+                                               SHLIBPREFIX=shlibprefix,
+                                               SHLIBSUFFIX=shlibsuffix,
+                                               SHLINKFLAGS=shlinkflags,
+                                               LIBPATH=libpath,
+                                               LIBS=libs,
+                                               FRAMEWORKS=FRAMEWORKS,
+                                               )
+
+    # Copy the built shared library to places where Python's that have done
+    # 'import onyx' will find it.
+    env.PylibSharedLibrary(audiomodule_shared_base, audiomodule_lib_shared)
+
+
+
+# see also py/onyx/audio/SConscript for the Py side of sndfilewrap_base
+sndfilewrap_base = 'sndfilewrap'
+sndfilewrap = env.SharedLibrary(sndfilewrap_base + '.c',
+                             CPPPATH=cpppath,
+                             SHLIBPREFIX=shlibprefix,
+                             SHLIBSUFFIX=shlibsuffix,
+                             LIBPATH=libpath,
+                             LIBS=libs + ['sndfile'],
+                             )
+# Copy the built shared library to places where Pythons that have done
+# 'import onyx' will find it.
+env.PylibSharedLibrary(sndfilewrap_base, sndfilewrap)
+
+
+# see also py/onyx/audio/SConscript for the Py side of mpg123wrap_base
+mpg123wrap_base = 'mpg123wrap'
+mpg123wrap = env.SharedLibrary(mpg123wrap_base + '.c',
+                             CPPPATH=cpppath,
+                             SHLIBPREFIX=shlibprefix,
+                             SHLIBSUFFIX=shlibsuffix,
+                             LIBPATH=libpath,
+                             LIBS=libs + ['mpg123'],
+                             )
+# Copy the built shared library to places where Pythons that have done
+# 'import onyx' will find it.
+env.PylibSharedLibrary(mpg123wrap_base, mpg123wrap)

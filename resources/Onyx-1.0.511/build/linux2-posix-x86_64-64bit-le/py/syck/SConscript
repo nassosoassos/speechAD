@@ -1,0 +1,37 @@
+###########################################################################
+#
+# File:         SConscript (directory: ./py/syck)
+# Date:         2-Oct-2007
+# Author:       Ken Basye
+# Description:  Syck package (for parsing YAML files)
+#
+# This file is part of Onyx   http://onyxtools.sourceforge.net
+#
+# Copyright 2007 - 2009 The Johns Hopkins University
+#
+# Licensed under the Apache License, Version 2.0 (the "License").
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.  See the License for the specific language governing
+# permissions and limitations under the License.
+#
+###########################################################################
+
+Import('env')
+
+# We didn't write these files which means they don't have the Onyx
+# boilerplate for running tests.  So, we flag them for no testing.
+init = env.PyFile('__init__.py', no_test=True)
+loaders = env.PyFile('loaders.py', no_test=True)
+dumpers = env.PyFile('dumpers.py', no_test=True)
+
+# See also code in cpp/pylib/SConscript that uses the same shared name and that
+# tells SCons about the shared library
+syck_shared_base = '_syck'
+# Tell SCons about the shared library dependencies for these modules
+env.PylibDepends([init, loaders, dumpers], syck_shared_base)

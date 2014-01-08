@@ -1,0 +1,97 @@
+===========================================================================
+=
+= File:         versioning.txt
+= Date:         Fri 16 Jan 2009 12:46
+= Author:       Ken Basye
+= Description:  Versioning policy statement
+=
+= This file is part of Onyx   http://onyxtools.sourceforge.net
+=
+= Copyright 2009 The Johns Hopkins University
+=
+= Licensed under the Apache License, Version 2.0 (the "License").
+= You may not use this file except in compliance with the License.
+= You may obtain a copy of the License at
+=   http://www.apache.org/licenses/LICENSE-2.0
+= 
+= Unless required by applicable law or agreed to in writing, software
+= distributed under the License is distributed on an "AS IS" BASIS,
+= WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+= implied.  See the License for the specific language governing
+= permissions and limitations under the License.
+=
+===========================================================================
+
+[Notwithstanding the description above, right now this is just some
+notes and a draft proposal - KJB]
+
+Our versioning scheme needs to account for several types of changes,
+and thus reflect certain promises of consistency.  Possible change
+types include:
+   Minor additions
+   Bug fixes
+   Major additions
+   Interface changes
+   File-format changes
+   Additions to required external packages
+   Python version changes
+   Other major overhauls
+
+My intention was to order the list roughly in order of both frequency
+(with higher-frequency changes nearer the top) and disruptiveness (with
+higher-disruption changes nearer the bottom).  Hopefully, frequency
+and disruptiveness are highly negatively correlated, so one
+ordering captures both :->.
+
+Proposal:
+
+Maintain versions as x.y.z with the usual ordering (biggest changes
+cause bumps in x).  Bump z for bug fixes and additions, so that a
+change in z should never break a working client.  Bump y for interface
+or file-format changes, where client breakage is expected.  Bump x for
+really big changes such that old scripts not only are broken, but it's
+likely they'll need a major overhaul or complete rewrite to work.  The
+last case could also be used to cover big changes in external
+dependencies, like the change to Python 3, or introducing reliance on
+new external packages, so that updating machines is required to get
+things working again.
+
+Use the BZR version number for z, so that it's bumped on every
+checkin.  This may be a bit tricky to implement automatically, since
+BZR is distributed and can use the same version number for different
+checkins until things get resolved.  I think we can overcome this
+problem, though.  Start x and y at 0 and bump them as needed, going to
+multi-digit numbers as necessary - always reset y to 0 when x is
+bumped.
+
+Discussion:
+
+Not having separate fields for interface and file-format changes means
+that one number will change more often, but it simplifies things.
+It's hard to order these two kinds of changes, so using two numbers
+for them, say F.I and resetting the rightmost of the two when the
+leftmost changes seems confusing, at least, and yet *not* having such
+semantics also seems confusing.  We could lump interface changes into
+the most minor number, but this essentially says that we can break
+things on any new version, which seems a bit high-handed.  My thinking
+is that if we make clear what's going to break when the middle (and
+left) number change, folks will get a good idea of how much work they
+have to do and where.
+
+Modern computer languages tend to have a notion of private data.  In Python this
+is largely a convention, any attribute whose name token begin with underscore is
+considered private.  The interpreter honors this for globbed imports, but it's
+otherwise only a convention.  Other languages are stricter, e.g. C, Java, where
+privacy lexically affects what code can access attributes.  
+
+Regardless of how privacy is expressed in the language in question, any private
+names and interfaces will be allowed to be changed on any release.  Such private
+components could be added, removed, and/or renamed on any release.  But, private
+components could only be converted to non-private components when y is changed,
+as the new non-private symbols amount to an interface change.  Since private
+data can change at any release, any client that relies on private data is not,
+strictly, a working client.  That is, changes to its behavior across a release
+(because the private data it relied on has changed) cannot be called breakage.
+For the above promises to hold, the client must be classified as not working
+prior to the release.  In short, any client that is using private data is
+not a working client.

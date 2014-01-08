@@ -1,0 +1,60 @@
+###########################################################################
+#
+# File:         SConscript (directory: ./sandbox/eventdet)
+# Date:         07-Dec-2007
+# Author:       Jim Baker
+# Description:  Low level acoustic event detection
+#
+# This file is part of Onyx   http://onyxtools.sourceforge.net
+#
+# Copyright 2007 The Johns Hopkins University
+#
+# Licensed under the Apache License, Version 2.0 (the "License").
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.  See the License for the specific language governing
+# permissions and limitations under the License.
+#
+###########################################################################
+
+
+wavefiles = Split('Zero001.wav One001.wav Two001.wav Three001.wav Four001.wav Five001.wav Six001.wav Seven001.wav Eight001.wav Nine001.wav')
+
+eventchain_base = "eventchain"
+
+# standard Onyx treatment of Python code
+Import('env')
+eventchain = env.PyFile(eventchain_base, doctest_files=wavefiles)
+
+# nonstandard usage of the pyc file that gets built
+
+# run the event-detector test on the wave files
+eventchain_log_test = env.Command(eventchain_base + '.log-test',
+                                  [eventchain[0]] + wavefiles,
+                                  env['ONYX_PYTHON_EXEC'] + ' $SOURCES > $TARGET')
+env.Depends(eventchain_log_test, eventchain)
+
+# verify the log
+eventchain_log_diff = env.Diff(eventchain_base + '.log-diff',
+                               [eventchain_base + '.log-ref'] + eventchain_log_test)
+env.Depends(eventchain_log_diff, eventchain)
+
+
+# Other files in this directory that should appear in the build directory
+env.Local('config.addDA', 
+          'config.mfcc0', 
+          'digits.scp', 
+          'make_htk_feat_data.py', 
+          )
+
+# We want this directory to appear in the build directory, even though there
+# are no explicit dependencies on them.
+feat0_dir = env.Dir('#feat0')
+home = env.Dir('#' + env['ONYX_HOME']).abspath
+env.LocalAllFilesInDir(feat0_dir, home)
+

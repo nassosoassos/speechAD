@@ -1,0 +1,95 @@
+===========================================================================
+=
+= File:         htkmfcc-parameters.txt (directory: py/onyx/signalprocessing)
+= Date:         2009-01-06 Tue 17:05:27
+= Author:       Hugh Secker-Walker
+= Description:  Listing of HTK configuration variables
+=
+= This file is part of Onyx   http://onyxtools.sourceforge.net
+=
+= Copyright 2009 The Johns Hopkins University
+=
+= Licensed under the Apache License, Version 2.0 (the "License").
+= You may not use this file except in compliance with the License.
+= You may obtain a copy of the License at
+=   http://www.apache.org/licenses/LICENSE-2.0
+= 
+= Unless required by applicable law or agreed to in writing, software
+= distributed under the License is distributed on an "AS IS" BASIS,
+= WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+= implied.  See the License for the specific language governing
+= permissions and limitations under the License.
+=
+===========================================================================
+
+18.1 Configuration Variables used in Library Modules 
+Table 18.1: Library Module Configuration Variables 
+(just the parts that apply to signal processing)
+
+Name Default Description 
+
+ACCWINDOW 2 Acceleration window size 
+ADDDITHER 0.0 Level of noise added to input signal 
+AUDIOSIG 0 Audio signal number for remote control 
+BYTEORDER Define byte order VAX or other 
+CEPLIFTER 22 Cepstral liftering coefficient 
+CMEANDIR Directory to find cepstral mean vecotrs 
+CMEANMASK Filename mask for cepstral mean vectors 
+CMEANPATHMASK Path name mask for cepstral mean vectors, the matched string is used to extend CMEANDIR string 
+COMPRESSFACT 0.33 Amplitude compression factor for PLP 
+DELTAWINDOW 2 Delta window size 
+DOUBLEFFT F Use twice the required size for FFT 
+ENORMALISE T Normalise log energy 
+ESCALE 0.1 Scale log energy 
+HEADERSIZE Size of header in an alien file 
+HIFREQ -1.0 High frequency cut-off in fbank analysis 
+LINEIN T Enable audio input from machine line input 
+LINEOUT T Enable audio output to machine line output 
+LOFREQ -1.0 Low frequency cut-off in fbank analysis 
+LPCORDER 12 Order of lpc analysis 
+MATTRANFN Input transformation file 
+MEASURESIL T Measure background silence level 
+MICIN F Enable audio input from machine mic input 
+NATURALREADORDER F Enable natural read order for binary files 
+NATURALWRITEORDER F Enable natural write order for binary files 
+NSAMPLES Num samples in alien file input via a pipe 
+NUMCEPS 12 Number of cepstral parameters 
+NUMCHANS 20 Number of filterbank channels 
+OUTSILWARN T Print a warning message to stdout before measuring audio levels 
+PHONESOUT T Enable audio output to machine phones output 
+PREEMCOEF 0.97 Set pre-emphasis coefficient 
+RAWENERGY T Use raw energy 
+SAVECOMPRESSED F Save the output file in compressed form 
+SAVEWITHCRC T Attach a checksum to output parameter file 
+SILENERGY 0.0 Average background noise level (in dB) - will normally be measured rather than supplied in configuration 
+SILFLOOR 50.0 Energy silence floor in dBs 
+SILGLCHCOUNT 2 Maximum number of frames marked as silence in window which is classified as speech whilst expecting silence
+SILMARGIN 40 Number of extra frames included before and after start and end of speech marks from the speech/silence detector 
+SILSEQCOUNT 100 Number of frames classified as silence needed to mark end of utterance 
+SIMPLEDIFFS F Use simple differences for delta calculations 
+SOURCEFORMAT HTK File format of source 
+SOURCEKIND ANON Parameter kind of source 
+SOURCERATE 0.0 Sample rate of source in 100ns units 
+SPCGLCHCOUNT 0 Maximum number of frames marked as silence in window which is classified as speech whilst expecting start of speech 
+SPCSEQCOUNT 10 Window over which speech/silence decision reached 
+SPEAKEROUT F Enable audio output to machine internal speaker 
+SPEECHTHRESH 9.0 Threshold for speech above silence level (in dB) 
+STEREOMODE Select channel: RIGHT or LEFT 
+TARGETFORMAT HTK File format of target 
+TARGETKIND ANON Parameter kind of target 
+TARGETRATE 0.0 Sample rate of target in 100ns units 
+TRACE 0 Trace setting 
+USEHAMMING T Use a Hamming window 
+USEPOWER F Use power not magnitude in fbank analysis 
+USESILDET F Enable speech/silence detector 
+V1COMPAT F HTK V1 compatibility setting 
+VARSCALEDIR Directory to find cepstral variance vectors 
+VARSCALEDIR string 
+VARSCALEFN Filename of global variance scaling vector 
+VARSCALEMASK Filename mask for cepstral variance vectors 
+VARSCALEPATHMASK Path name mask for cepstral variance vectors, the matched string is used to extend 
+VQTABLE NULL Name of VQ table 
+WARPFREQ 1.0 Frequency warping factor 
+WARPLCUTOFF Lower frequency threshold for non-linear warping 
+WINDOWSIZE 256000.0 Analysis window size in 100ns units 
+ZMEANSOURCE F Zero mean source waveform before analysis 

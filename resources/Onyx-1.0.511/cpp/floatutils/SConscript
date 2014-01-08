@@ -1,0 +1,122 @@
+###########################################################################
+#
+# File:         SConscript (directory: ./cpp/floatutils)
+# Date:         01-Oct-2008
+# Author:       Ken Basye
+# Description:  Build and test the floatutils C library
+#
+# This file is part of Onyx   http://onyxtools.sourceforge.net
+#
+# Copyright 2008, 2009 The Johns Hopkins University
+#
+# Licensed under the Apache License, Version 2.0 (the "License").
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.  See the License for the specific language governing
+# permissions and limitations under the License.
+#
+###########################################################################
+
+# this controls logging from this troublesome SConscript
+debug = False
+
+Import('env')
+
+base_files = [
+    'floatutils.cpp',
+    ]
+
+wrapper_files = [
+    'floatutils_wrap.cpp',
+    ]
+
+# XXX We should extract all this platform-dependent stuff to a higher
+# level and put what we find out into the environment for SConscripts
+# like this one to use and/or we should make a Scons builder for
+# shared Python libraries.
+
+import sys
+import os
+from distutils import sysconfig
+
+# our pre-processor defines
+cppdefines = 'DEBUG=1'
+
+# Stuff from distutils used for all platforms
+cpppath = [sysconfig.get_python_inc()]
+shlibsuffix = sysconfig.get_config_var('SO')
+
+# For each platform we need to fill in these items
+shlinkflags = ''
+shlibprefix = ''
+libpath = []
+libs = []
+
+if sys.platform == 'darwin':
+    # Mac OS X has a clever runtime and doesn't need much to link the shared library
+    shlinkflags = env.subst('$LINKFLAGS -bundle -undefined dynamic_lookup')
+    libpath = []
+    libs = []
+else:
+    shlinkflags = env.subst('$SHLINKFLAGS')
+    (libname, libdir) = sysconfig.get_config_vars('LDLIBRARY', 'LIBDIR')
+    libpath = [libdir,]
+    # don't set shlibprefix on the built library
+    Xshlibprefix = env.subst('$SHLIBPREFIX')
+    if libname.startswith(Xshlibprefix):
+        libname = libname[len(Xshlibprefix):]
+    if libname.endswith(shlibsuffix):
+        libname = libname[:-len(shlibsuffix)]
+    libs = [libname]
+
+if debug:
+    print 'CPPDEFINES', repr(cppdefines)
+    print 'CPPPATH', repr(cpppath)
+    print 'SHLIBPREFIX', repr(shlibprefix)
+    print 'SHLIBSUFFIX', repr(shlibsuffix)
+    print 'SHLINKFLAGS', repr(shlinkflags)
+    print 'LIBPATH', repr(libpath)
+    print 'LIBS', repr(libs)
+
+# Windows gives static and shared object files the same extensions, so
+# we give these two object-file targets basenames that differ
+floatutils_obj_static = env.Object('floatutils_static', base_files,
+                                  CPPDEFINES=cppdefines,
+                                  )
+floatutils_obj_shared = env.SharedObject('floatutils_shared', base_files,
+                                        CPPDEFINES=cppdefines,
+                                        )
+
+# note: test may contain multiple items, e.g. PDB file
+test_exe = env.Program('testfloatutils', ['testfloatutils.cpp'] + floatutils_obj_static,
+                       CPPDEFINES=cppdefines,
+                       )
+
+# run the test to generate a trial log file, then verify this file
+# against the reference; note: use 0 index on SOURCES to ensure we are using
+# just the executable item in test_exe
+env.Command('testfloatutils.log-trial', test_exe, '${SOURCES[0]} > $TARGET')
+env.Diff('testfloatutils.log-diff', ['testfloatutils.log-ref', 'testfloatutils.log-trial'])
+
+
+# See also code in py/onyx/util/SConscript that uses the same basename.
+floatutils_shared_base = '_floatutils'
+floatutils_lib_shared = env.SharedLibrary(floatutils_shared_base, wrapper_files + floatutils_obj_shared,
+                                         CPPDEFINES=cppdefines,
+                                         CPPPATH=cpppath,
+                                         SHLIBPREFIX=shlibprefix,
+                                         SHLIBSUFFIX=shlibsuffix,
+                                         SHLINKFLAGS=shlinkflags,
+                                         LIBPATH=libpath,
+                                         LIBS=libs,
+                                         )
+if debug: print 'floatutils_lib_shared', str(floatutils_lib_shared[0])
+
+# Copy the built shared library to place(s) where Python that has done 'import
+# onyx' will find it.
+env.PylibSharedLibrary(floatutils_shared_base, floatutils_lib_shared)

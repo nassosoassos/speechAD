@@ -1,0 +1,172 @@
+After initialization, expected durations for 11 steps are [ 1.99902344  1.98828125  1.93457031  5.078125  ] (sum = 11.0), targets are (2, 3, 6)
+Hmm: num_states = 3
+  Models (dim = 2):
+  GmmMgr index list: [0, 1, 2]
+Gmm: (Type = full, Dim = 2, NumComps = 2)
+Weights   Models
+ 0.5000     SGM: (Type = full, Dim = 2)  Means: -0.1839 0.0325    Vars:
+ 0.7000 0.0000
+ 0.0000 0.7000
+ 0.5000     SGM: (Type = full, Dim = 2)  Means: 0.6988 -0.0964    Vars:
+ 0.7000 0.0000
+ 0.0000 0.7000
+Gmm: (Type = full, Dim = 2, NumComps = 2)
+Weights   Models
+ 0.5000     SGM: (Type = full, Dim = 2)  Means: 1.4135 -1.5326    Vars:
+ 0.7000 0.0000
+ 0.0000 0.7000
+ 0.5000     SGM: (Type = full, Dim = 2)  Means: 0.2709 -1.2055    Vars:
+ 0.7000 0.0000
+ 0.0000 0.7000
+Gmm: (Type = full, Dim = 2, NumComps = 2)
+Weights   Models
+ 0.5000     SGM: (Type = full, Dim = 2)  Means: -0.0531 -0.2902    Vars:
+ 0.7000 0.0000
+ 0.0000 0.7000
+ 0.5000     SGM: (Type = full, Dim = 2)  Means: -0.2928 -2.1074    Vars:
+ 0.7000 0.0000
+ 0.0000 0.7000
+ Transition probabilities:
+[[ 0.   1.   0.   0.   0. ]
+ [ 0.   0.5  0.5  0.   0. ]
+ [ 0.   0.   0.5  0.5  0. ]
+ [ 0.   0.   0.   0.5  0.5]
+ [ 0.   0.   0.   0.   0. ]]
+Hmm: num_states = 3
+  Models (dim = 2):
+  GmmMgr index list: [0, 1, 2]
+Gmm: (Type = full, Dim = 2, NumComps = 2)
+Weights   Models
+ 0.2675     SGM: (Type = full, Dim = 2)  Means: 1.2926 1.3768    Vars:
+ 0.2457 0.2152
+ 0.2152 0.3682
+ 0.7325     SGM: (Type = full, Dim = 2)  Means: 1.8453 1.8355    Vars:
+ 0.5059 0.3191
+ 0.3191 0.5104
+Gmm: (Type = full, Dim = 2, NumComps = 2)
+Weights   Models
+ 0.7961     SGM: (Type = full, Dim = 2)  Means: 3.1589 2.9738    Vars:
+ 0.2796 -0.0699
+ -0.0699 0.2741
+ 0.2039     SGM: (Type = full, Dim = 2)  Means: 2.7293 3.1849    Vars:
+ 0.2852 -0.0568
+ -0.0568 0.2749
+Gmm: (Type = full, Dim = 2, NumComps = 2)
+Weights   Models
+ 1.0000     SGM: (Type = full, Dim = 2)  Means: 3.0026 3.0333    Vars:
+ 0.2767 0.0137
+ 0.0137 0.2708
+ 0.0000     SGM: (Type = full, Dim = 2)  Means: 2.8465 2.4196    Vars:
+ 0.2998 0.0289
+ 0.0289 0.1469
+ Transition probabilities:
+[[ 0.          1.          0.          0.          0.        ]
+ [ 0.          0.817305    0.182695    0.          0.        ]
+ [ 0.          0.          0.12151722  0.87848278  0.        ]
+ [ 0.          0.          0.          0.77210939  0.22789061]
+ [ 0.          0.          0.          0.          0.        ]]
+After training, expected durations for 11 steps are [ 4.87862807  0.98210182  2.74398311  2.395287  ] (sum = 11.0), targets were (2, 3, 6)
+================ TEST 2 ================
+Hmm: num_states = 5
+  Models (dim = 2):
+  GmmMgr index list: [0, 1, 2, 3, 4]
+DummyModel (Dim = 2) always returning a score of 0.1
+DummyModel (Dim = 2) always returning a score of 0.2
+DummyModel (Dim = 2) always returning a score of 0.4
+DummyModel (Dim = 2) always returning a score of 0.4
+DummyModel (Dim = 2) always returning a score of 0.4
+ Transition probabilities:
+[[ 0.    0.    0.    1.    0.    0.    0.    0.    0.    0.    0.  ]
+ [ 0.    0.    0.    0.    1.    0.    0.    0.    0.    0.    0.  ]
+ [ 0.    0.    0.    0.    0.    1.    0.    0.    0.    0.    0.  ]
+ [ 0.    0.    0.    0.25  0.25  0.25  0.25  0.    0.    0.    0.  ]
+ [ 0.    0.    0.    0.    0.25  0.25  0.25  0.25  0.    0.    0.  ]
+ [ 0.    0.    0.    0.    0.    0.25  0.25  0.25  0.25  0.    0.  ]
+ [ 0.    0.    0.    0.    0.    0.    0.25  0.25  0.25  0.25  0.  ]
+ [ 0.    0.    0.    0.    0.    0.    0.    0.25  0.25  0.25  0.25]
+ [ 0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.  ]
+ [ 0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.  ]
+ [ 0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.  ]]
+Hmm: num_states = 5
+  Models (dim = 2):
+  GmmMgr index list: [0, 1, 2, 3, 4]
+DummyModel (Dim = 2) always returning a score of 0.1
+DummyModel (Dim = 2) always returning a score of 0.2
+DummyModel (Dim = 2) always returning a score of 0.4
+DummyModel (Dim = 2) always returning a score of 0.4
+DummyModel (Dim = 2) always returning a score of 0.4
+ Transition probabilities:
+[[ 0.          0.          0.          1.          0.          0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          1.          0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          1.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.20513074  0.33125401  0.39407297
+   0.06954229  0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.40703839  0.49007507
+   0.0929373   0.00994924  0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.76286864
+   0.19731185  0.03849276  0.00132675  0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.
+   0.75539821  0.21436945  0.01511617  0.01511617  0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.76018532  0.07993823  0.07993823  0.07993823]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.          0.        ]]
+================ TEST 3 ================
+Hmm: num_states = 5
+  Models (dim = 2):
+  GmmMgr index list: [0, 1, 2, 3, 4]
+DummyModel (Dim = 2) always returning a score of 0.1
+DummyModel (Dim = 2) always returning a score of 0.2
+DummyModel (Dim = 2) always returning a score of 0.4
+DummyModel (Dim = 2) always returning a score of 0.4
+DummyModel (Dim = 2) always returning a score of 0.4
+ Transition probabilities:
+[[ 0.    0.    0.    1.    0.    0.    0.    0.    0.    0.    0.  ]
+ [ 0.    0.    0.    0.    1.    0.    0.    0.    0.    0.    0.  ]
+ [ 0.    0.    0.    0.    0.    1.    0.    0.    0.    0.    0.  ]
+ [ 0.    0.    0.    0.25  0.25  0.25  0.25  0.    0.    0.    0.  ]
+ [ 0.    0.    0.    0.    0.25  0.25  0.25  0.25  0.    0.    0.  ]
+ [ 0.    0.    0.    0.    0.    0.25  0.25  0.25  0.25  0.    0.  ]
+ [ 0.    0.    0.    0.    0.    0.    0.25  0.25  0.25  0.25  0.  ]
+ [ 0.    0.    0.    0.    0.    0.    0.    0.25  0.25  0.25  0.25]
+ [ 0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.  ]
+ [ 0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.  ]
+ [ 0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.  ]]
+Hmm: num_states = 5
+  Models (dim = 2):
+  GmmMgr index list: [0, 1, 2, 3, 4]
+DummyModel (Dim = 2) always returning a score of 0.1
+DummyModel (Dim = 2) always returning a score of 0.2
+DummyModel (Dim = 2) always returning a score of 0.4
+DummyModel (Dim = 2) always returning a score of 0.4
+DummyModel (Dim = 2) always returning a score of 0.4
+ Transition probabilities:
+[[ 0.          0.          0.          1.          0.          0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          1.          0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          1.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.20513074  0.33125401  0.39407297
+   0.06954229  0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.40703839  0.49007507
+   0.0929373   0.00994924  0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.76286864
+   0.19731185  0.03849276  0.00132675  0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.
+   0.75539821  0.21436945  0.01511617  0.01511617  0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.76018532  0.07993823  0.07993823  0.07993823]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.          0.        ]]

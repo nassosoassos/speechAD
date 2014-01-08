@@ -1,0 +1,42 @@
+~o
+<STREAMINFO> 1 2
+<VECSIZE> 2 <NULLD><USER>
+~h "class1"
+<BEGINHMM>
+<NumStates> 3
+<State> 2
+<Mean> 2
+ 0.0 0.0
+<Variance> 2
+ 1.0 1.0
+<TransP> 3
+0.0 1.0 0.0
+0.0 0.0 1.0
+0.0 0.0 0.0
+<ENDHMM>
+~h "class2"
+<BEGINHMM>
+<NumStates> 3
+<State> 2
+<Mean> 2
+ 0.0 0.0
+<Variance> 2
+ 1.0 1.0
+<TransP> 3
+0.0 1.0 0.0
+0.0 0.0 1.0
+0.0 0.0 0.0
+<ENDHMM>
+~h "class3"
+<BEGINHMM>
+<NumStates> 3
+<State> 2
+<Mean> 2
+ 0.0 0.0
+<Variance> 2
+ 1.0 1.0
+<TransP> 3
+0.0 1.0 0.0
+0.0 0.0 1.0
+0.0 0.0 0.0
+<ENDHMM>

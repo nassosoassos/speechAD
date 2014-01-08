@@ -1,0 +1,51 @@
+###########################################################################
+#
+# File:         SConscript (directory: cpp/sph2pipe)
+# Date:         15-Sep-2009
+# Author:       Hugh Secker-Walker
+# Description:  Build and install NIST's sph2pipe utility for Sphere audio
+#
+# This file is part of Onyx   http://onyxtools.sourceforge.net
+#
+# Copyright 2009 The Johns Hopkins University
+#
+# Licensed under the Apache License, Version 2.0 (the "License").
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.  See the License for the specific language governing
+# permissions and limitations under the License.
+#
+###########################################################################
+
+Import('env')
+
+# note: env.Program automagically copies the *.h files used by the C files.
+sph2pipe = env.Program('sph2pipe',
+                       Split('file_headers.c shorten_x.c sph2pipe.c'),
+                       LIBS=['m'])
+
+env.ProjectInstallProgram(sph2pipe)
+
+data_files = (
+    '123_1pcbe_shn.sph',
+    '123_1pcle_shn.sph',
+    '123_1ulaw_shn.sph',
+    '123_2alaw.sph',
+    '123_2pcbe_shn.sph',
+    '123_2pcle_shn.sph',
+    '123_2ulaw_shn.sph',
+)
+
+# test the executable by getting md5sums for the 16-bit pcm output of some files
+env.Command('sph2pipe-tests.log-trial', sph2pipe + list(data_files),
+            ['rm -f $TARGET']
+            # subtle: [0] gets the exe, [%d] on ~i works backwards through the data files
+            + list('(echo %s; ${SOURCES[0]} -p -f raw ${SOURCES[%d]} | md5sum; echo) >> $TARGET 2>&1' % (data_files[~i], ~i) for i in xrange(len(data_files))))
+env.Diff('sph2pipe-tests.log-diff', ['sph2pipe-tests.log-ref', 'sph2pipe-tests.log-trial'])
+
+env.Local('README.txt')

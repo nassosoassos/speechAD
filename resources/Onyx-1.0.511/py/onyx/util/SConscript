@@ -1,0 +1,62 @@
+###########################################################################
+#
+# File:         SConscript (directory: py/onyx/util)
+# Date:         5-Oct-2007
+# Author:       Hugh Secker-Walker
+# Description:  Build and test utilities
+#
+# This file is part of Onyx   http://onyxtools.sourceforge.net
+#
+# Copyright 2007 - 2009 The Johns Hopkins University
+#
+# Licensed under the Apache License, Version 2.0 (the "License").
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.  See the License for the specific language governing
+# permissions and limitations under the License.
+#
+###########################################################################
+
+Import('env')
+
+categories = ((('Math', 'Mathematical tools for Numpy and floating point work'),
+               ('Development', 'Tools to help support software development for the toolkit'),
+               ('Evaluation', 'Utilities supporting evaluation and summarization of results'),
+               ('Miscellaneous', 'General utilities and odd bits')
+               ))
+
+env.DocBuildThisPackage('Utilities', categories)
+
+env.PyFile('__init__.py', category='Miscellaneous')
+env.PyFile('alignment.py', category='Evaluation')
+env.PyFile('checkutils.py', category='Development')
+env.PyFile('codedependency.py', category='Development')
+env.PyFile('collate.py', category='Miscellaneous')
+env.PyFile('debugprint.py', category='Development')
+env.PyFile('discrete.py', category='Miscellaneous')
+env.PyFile('dotdisplay.py', category='Miscellaneous')
+env.PyFile('duration.py', category='Miscellaneous')
+env.PyFile('iterutils.py', category='Miscellaneous')
+env.PyFile('mathutils.py', category='Math')
+env.PyFile('nonparametric.py', category='Miscellaneous')
+env.PyFile('pointprocess.py', category='Miscellaneous')
+env.PyFile('process.py', category='Miscellaneous')
+env.PyFile('quantity.py', category='Miscellaneous')
+env.PyFile('rocutils.py', category='Evaluation')
+env.PyFile('safediv.py', category='Math')
+env.PyFile('singleton.py', category='Development')
+env.PyFile('streamprocess.py', category='Miscellaneous')
+env.PyFile('timestamp.py', category='Miscellaneous')
+env.PyFile('versionset.py', category='Development')
+
+floatutils = env.PyFile('floatutils.py', category='Math')
+# See also code in cpp/floatutils/SConscript that uses the same shared name and
+# that puts the shared library where it can be found
+floatutils_shared_base = '_floatutils'
+# Tell SCons about the shared library dependency
+env.PylibDepends(floatutils, floatutils_shared_base)

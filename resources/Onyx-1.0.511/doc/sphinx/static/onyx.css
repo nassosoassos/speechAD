@@ -1,0 +1,19 @@
+/**
+ * Onyx stylesheet -- derived from sphinxdoc theme
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *
+ */
+
+@import url("sphinxdoc.css");
+
+/*
+div.sphinxsidebar {
+    margin: 0;
+    padding: 0.5em 15px 15px 0;
+    width: 210px;
+    float: left;
+    margin-left: -100%;
+    font-size: 1em;
+    text-align: left;
+}
+*/

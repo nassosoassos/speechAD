@@ -1,0 +1,5 @@
+Original value = -314.159; encoding = -(+0008)0x3a28b43958106; decoded value = -314.159
+Original value = -314.159; encoding = (+0008)0x3a28b43958106; fpclassify(decoded value) == FP_NAN is 1
+Original value = -314.159; encoding = (+0008)0x3a28b43958106; fpclassify(decoded value) == FP_NAN is 1
+Original value = -314.159; encoding = (+0008)0x=a28b43958106; fpclassify(decoded value) == FP_NAN is 1
+subnorm = 4.94066e-324; readable = +(-1023)0x0000000000001; fpclassify(subnorm) == FP_SUBNORMAL is <platform_specific>

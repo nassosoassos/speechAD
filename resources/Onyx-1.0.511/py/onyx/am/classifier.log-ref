@@ -1,0 +1,88 @@
+============== test0 ============
+Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.7500     SGM: (Type = diagonal, Dim = 3)  Means: 1.0000 1.0000 1.0000    Vars: 1.0000 1.0000 1.0000
+ 0.2500     SGM: (Type = diagonal, Dim = 3)  Means: 2.0000 3.0000 4.0000    Vars: 0.5000 0.5000 1.0000
+Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.5000     SGM: (Type = diagonal, Dim = 3)  Means: -1.0000 -1.0000 -1.0000    Vars: 1.0000 1.0000 1.0000
+ 0.5000     SGM: (Type = diagonal, Dim = 3)  Means: -2.0000 -3.0000 -4.0000    Vars: 0.5000 0.5000 1.0000
+Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.1000     SGM: (Type = diagonal, Dim = 3)  Means: 1.0000 1.0000 -2.0000    Vars: 1.0000 1.0000 1.0000
+ 0.9000     SGM: (Type = diagonal, Dim = 3)  Means: 3.0000 3.0000 5.0000    Vars: 0.5000 0.5000 1.0000
+
+AdaptingGmmClassifier (num_classes = 3, dimension = 3)
+   Labels/Models:
+Label: A  Model:Gmm: (Type = diagonal, Dim = 3, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 3)  Means: -0.1839 0.0325 0.6988    Vars: 0.7000 0.7000 0.7000
+Label: B  Model:Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.5000     SGM: (Type = diagonal, Dim = 3)  Means: -0.0964 1.4135 -1.5326    Vars: 0.7000 0.7000 0.7000
+ 0.5000     SGM: (Type = diagonal, Dim = 3)  Means: 0.2709 -1.2055 -0.0531    Vars: 0.7000 0.7000 0.7000
+Label: C  Model:Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.5000     SGM: (Type = diagonal, Dim = 3)  Means: -0.2902 -0.2928 -2.1074    Vars: 0.7000 0.7000 0.7000
+ 0.5000     SGM: (Type = diagonal, Dim = 3)  Means: 0.0847 0.6270 1.6793    Vars: 0.7000 0.7000 0.7000
+
+AdaptingGmmClassifier (num_classes = 3, dimension = 3)
+   Labels/Models:
+Label: A  Model:Gmm: (Type = diagonal, Dim = 3, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 3)  Means: 1.2249 1.5390 1.7917    Vars: 0.9229 1.6364 2.5675
+Label: B  Model:Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.4706     SGM: (Type = diagonal, Dim = 3)  Means: -0.8623 -0.9529 -0.9683    Vars: 0.9570 0.9324 0.7697
+ 0.5294     SGM: (Type = diagonal, Dim = 3)  Means: -2.1082 -2.9721 -3.9630    Vars: 0.5385 0.4003 1.1494
+Label: C  Model:Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.1046     SGM: (Type = diagonal, Dim = 3)  Means: 0.9852 1.1640 -2.1076    Vars: 1.1919 0.6495 0.8769
+ 0.8954     SGM: (Type = diagonal, Dim = 3)  Means: 3.0223 2.9872 4.9643    Vars: 0.5333 0.5148 1.0394
+
+============== test1 ============
+Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.7500     SGM: (Type = diagonal, Dim = 3)  Means: 1.0000 1.0000 1.0000    Vars: 1.0000 1.0000 1.0000
+ 0.2500     SGM: (Type = diagonal, Dim = 3)  Means: 2.0000 3.0000 4.0000    Vars: 0.5000 0.5000 1.0000
+Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.5000     SGM: (Type = diagonal, Dim = 3)  Means: -1.0000 -1.0000 -1.0000    Vars: 1.0000 1.0000 1.0000
+ 0.5000     SGM: (Type = diagonal, Dim = 3)  Means: -2.0000 -3.0000 -4.0000    Vars: 0.5000 0.5000 1.0000
+Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.1000     SGM: (Type = diagonal, Dim = 3)  Means: 1.0000 1.0000 -2.0000    Vars: 1.0000 1.0000 1.0000
+ 0.9000     SGM: (Type = diagonal, Dim = 3)  Means: 3.0000 3.0000 5.0000    Vars: 0.5000 0.5000 1.0000
+
+AdaptingGmmClassifier (num_classes = 3, dimension = 3)
+   Labels/Models:
+Label: A  Model:Gmm: (Type = diagonal, Dim = 3, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 3)  Means: -0.1839 0.0325 0.6988    Vars: 0.7000 0.7000 0.7000
+Label: B  Model:Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.5000     SGM: (Type = diagonal, Dim = 3)  Means: -0.0964 1.4135 -1.5326    Vars: 0.7000 0.7000 0.7000
+ 0.5000     SGM: (Type = diagonal, Dim = 3)  Means: 0.2709 -1.2055 -0.0531    Vars: 0.7000 0.7000 0.7000
+Label: C  Model:Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.5000     SGM: (Type = diagonal, Dim = 3)  Means: -0.2902 -0.2928 -2.1074    Vars: 0.7000 0.7000 0.7000
+ 0.5000     SGM: (Type = diagonal, Dim = 3)  Means: 0.0847 0.6270 1.6793    Vars: 0.7000 0.7000 0.7000
+
+AdaptingGmmClassifier (num_classes = 3, dimension = 3)
+   Labels/Models:
+Label: A  Model:Gmm: (Type = diagonal, Dim = 3, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 3)  Means: 1.2246 1.4770 1.6981    Vars: 0.9721 1.5608 2.5002
+Label: B  Model:Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.2648     SGM: (Type = diagonal, Dim = 3)  Means: -1.2213 -0.5576 -1.0813    Vars: 0.9283 1.0107 1.5087
+ 0.7352     SGM: (Type = diagonal, Dim = 3)  Means: -1.7609 -2.4831 -3.1066    Vars: 0.8855 1.0329 2.6442
+Label: C  Model:Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.1483     SGM: (Type = diagonal, Dim = 3)  Means: 0.8265 1.2180 -2.0613    Vars: 1.3761 0.9288 0.8599
+ 0.8517     SGM: (Type = diagonal, Dim = 3)  Means: 2.9851 3.0228 4.9540    Vars: 0.5053 0.5232 1.0950
+
+3300
+3300 3300
+2778
+0.841818181818

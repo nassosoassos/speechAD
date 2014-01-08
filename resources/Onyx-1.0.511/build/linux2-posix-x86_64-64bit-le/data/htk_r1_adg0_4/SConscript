@@ -1,0 +1,71 @@
+###########################################################################
+#
+# File:         SConscript (directory: ./data/htk_r1_adg0_4)
+# Date:         21-Jan-2009
+# Author:       Hugh Secker-Walker
+# Description:  Declare data files that are part of the project
+#
+# This file is part of Onyx   http://onyxtools.sourceforge.net
+#
+# Copyright 2009 The Johns Hopkins University
+#
+# Licensed under the Apache License, Version 2.0 (the "License").
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.  See the License for the specific language governing
+# permissions and limitations under the License.
+#
+###########################################################################
+
+Import('env')
+
+data_files = (
+    'adg0_4_sr009.mfc',
+    'adg0_4_sr049.mfc',
+    'adg0_4_sr089.mfc',
+    'adg0_4_sr129.mfc',
+    'adg0_4_sr169.mfc',
+    'adg0_4_sr209.mfc',
+    'adg0_4_sr249.mfc',
+    'adg0_4_sr289.mfc',
+    'adg0_4_sr329.mfc',
+    'adg0_4_sr369.mfc',
+    'adg0_4_sr409.mfc',
+    'adg0_4_sr449.mfc',
+    'adg0_4_sr489.mfc',
+    'adg0_4_sr529.mfc',
+    'adg0_4_sr569.mfc',
+    'adg0_4_st0019.mfc',
+    'adg0_4_st0096.mfc',
+    'adg0_4_st0193.mfc',
+    'adg0_4_st0270.mfc',
+    'adg0_4_st0358.mfc',
+    'adg0_4_st0441.mfc',
+    'adg0_4_st0534.mfc',
+    'adg0_4_st0626.mfc',
+    'adg0_4_st0724.mfc',
+    'adg0_4_st0805.mfc',
+    'adg0_4_st0902.mfc',
+    'adg0_4_st0995.mfc',
+    'adg0_4_st1089.mfc',
+    'adg0_4_st1181.mfc',
+    'adg0_4_st1253.mfc',
+    'adg0_4_st1350.mfc',
+    'adg0_4_st1440.mfc',
+    'adg0_4_st1545.mfc',
+    'adg0_4_st1655.mfc',
+    'adg0_4_st1739.mfc',
+    'adg0_4_st1823.mfc',
+    'adg0_4_st1904.mfc',
+    'adg0_4_st1996.mfc',
+    'adg0_4_st2067.mfc',
+    'adg0_4_st2165.mfc',
+    )
+
+for data_file in data_files:
+    env.DataFile(data_file)

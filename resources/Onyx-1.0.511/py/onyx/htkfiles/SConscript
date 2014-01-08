@@ -1,0 +1,102 @@
+###########################################################################
+#
+# File:         SConscript (directory: ./py/onyx/htkfiles)
+# Date:         Tue 22 Apr 2008 15:25
+# Author:       Ken Basye
+# Description:  Parsing for HTK's various file formats
+#
+# This file is part of Onyx   http://onyxtools.sourceforge.net
+#
+# Copyright 2008, 2009 The Johns Hopkins University
+#
+# Licensed under the Apache License, Version 2.0 (the "License").
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.  See the License for the specific language governing
+# permissions and limitations under the License.
+#
+###########################################################################
+
+Import('env')
+
+env.DocBuildThisPackage("HTK Files")
+env.PyFile('__init__.py')
+
+# This checked-in file was built by the yapps2 tools which are found in
+# py/yapps2.  See the work below that verifies we can still build it
+env.PyFile('mmf.py', no_doc=True)
+
+htkmmf = env.PyFile('htkmmf.py',
+                    logref='htkmmf.log-ref',
+                    doctest_files=('start.mmf',
+                                   'mmf1.mmf',
+                                   'mmf4.mmf',
+                                   'monophones.mmf'))
+
+env.PyFile('htklex.py', doctest_files=('en_lexic.v08',))
+
+env.PyFile('htkscp.py', doctest_files=('ind_trn109.scp',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_sr009.mfc',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_sr049.mfc',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_sr089.mfc',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_sr129.mfc',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_sr169.mfc',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_sr209.mfc',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_sr249.mfc',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_sr289.mfc',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_sr329.mfc',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_sr369.mfc',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_sr409.mfc',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_sr449.mfc',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_sr489.mfc',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_sr529.mfc',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_sr569.mfc',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_st0019.mfc',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_st0096.mfc',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_st0193.mfc',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_st0270.mfc',
+                                       '#' + 'data/htk_r1_adg0_4/adg0_4_st0358.mfc',
+                                       ))
+
+env.PyFile('htkaudio.py', doctest_files=('gaw0_7_st0451.mfc',
+                                         'gaw0_7_st0451.raw',
+                                         'gaw0_7_st0451_uncomp.mfc',
+                                         'gaw0_7_st0451_39feats.mfc',
+                                         ))
+
+env.PyFile('mlfprocess.py', doctest_files = ('f1.mlf',
+                                             'f2.mlf',
+                                             'mono.mlf'))
+
+htkscoring = env.PyFile('htkscoring.py', doctest_files=('monophones.mmf',
+                                                        'monophones4.mmf',
+                                                        'gaw0_7_st0451_39feats.mfc',
+                                                        '#' + 'data/htk_r1_adg0_4/adg0_4_sr009.mfc',
+                                                        ))
+
+htkscoring = env.PyFile('htkmmf2native.py', doctest_files=('start.mmf',
+                                                           'monophones.mmf',
+                                                           'start.am',
+                                                           'monophones.am'))
+
+
+# do work to verify that we can still build the checked in 'mmf.py' file
+env.File('mmf.g')
+env.Command('mmf-test.g', 'mmf.g',
+            Copy('$TARGET', '$SOURCE'))
+# external tool files
+import os
+yapps2 = env.File(os.path.join('#', 'py/yapps2/yapps2.py'))
+yappsrt = env.File(os.path.join('#', 'py/yapps2/yappsrt.py'))
+env.Command('mmf-test.py', 
+            # all three files are dependencies
+            ['mmf-test.g', yapps2, yappsrt],
+            # but only yapps2 and mmf-test.g appear on the command line
+            '$ONYX_PYTHON_EXEC ' + str(yapps2) + ' $SOURCE')
+# verify that the test file matches the checked in file
+env.Diff('mmf-test.log-diff', ['mmf.py', 'mmf-test.py'])

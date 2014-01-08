@@ -1,0 +1,37 @@
+###########################################################################
+#
+# File:         SConscript (directory: ./sandbox/malach)
+# Date:         Mon 11 May 2009 16:25
+# Author:       Ken Basye
+# Description:  Some tools for dealing with Malach transcript files
+#
+# This file is part of Onyx   http://onyxtools.sourceforge.net
+#
+# Copyright 2009 The Johns Hopkins University
+#
+# Licensed under the Apache License, Version 2.0 (the "License").
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.  See the License for the specific language governing
+# permissions and limitations under the License.
+#
+###########################################################################
+
+Import('env')
+
+test_trans = ('test_transcriptions/00009-003.trs',
+              'test_transcriptions/35995-002.trs',
+              'test_transcriptions/trans-13.dtd',
+              )
+
+env.PyFile('malach_parse.py', doctest_files=test_trans)
+env.PyFile('filefix.py', no_test=True)
+
+# Other files in this directory that should appear in the build directory
+env.Local('README.txt',
+          )

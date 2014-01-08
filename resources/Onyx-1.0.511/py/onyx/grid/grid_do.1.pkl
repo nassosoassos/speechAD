@@ -1,0 +1,14 @@
+S'grid_job'
+p1
+.I0
+.S'function_call'
+p1
+.S'onyx.grid.griddy'
+p1
+.S'my_func'
+p1
+.(S'a'
+S'b'
+S'c'
+tp1
+.

@@ -1,0 +1,108 @@
+###########################################################################
+#
+# File:         SConscript (directory: ./)
+# Date:         1-Oct-2007
+# Author:       Hugh Secker-Walker
+# Description:  Top-level SConscript, calls SConscript files in other directories
+#
+# This file is part of Onyx   http://onyxtools.sourceforge.net
+#
+# Copyright 2007 - 2009 The Johns Hopkins University
+#
+# Licensed under the Apache License, Version 2.0 (the "License").
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.  See the License for the specific language governing
+# permissions and limitations under the License.
+#
+###########################################################################
+
+Import('env')
+
+# directories with a SConscript file in them
+dirs = (
+    # cpp: C code
+    './cpp/floatutils',
+    './cpp/liveaudio',
+    './cpp/sph2pipe',
+    './cpp/syck',
+
+    # cpp: external C shared library
+    './cpp/pylib',
+    
+    # py/onyx: core Python code
+    './py',  # note: this directory has the oproject module
+    './py/onyx',
+    './py/onyx/am',
+    './py/onyx/audio',
+    './py/onyx/containers',
+    './py/onyx/dataflow',
+    './py/onyx/graph',
+    './py/onyx/grid',
+    './py/onyx/htkfiles',
+    './py/onyx/lexicon',
+    './py/onyx/signalprocessing',
+    './py/onyx/textdata',
+    './py/onyx/util',
+
+    # projects: client-ish Python code
+    './projects/chartrecorder',
+    './projects/ddt',
+    './projects/lm',
+    './projects/std',
+    './projects/datatools',
+    './projects/htk_test',
+
+    # sandbox: toy Python code and demos
+    './sandbox/eventdet',
+    './sandbox/livedemo',
+    './sandbox/malach',
+        
+    # External Python libraries
+    './py/syck',
+    './py/yapps2',
+
+    # SCons initialization and tools
+    './site_scons',
+    './site_scons/site_tools',
+
+    # data file directories
+    './data/htk_r1_adg0_4',
+    
+    # template files
+    './templates',
+
+    # documentation
+    './doc',
+    './doc/licenses',
+    './doc/images',
+    './doc/sphinx',
+    )
+
+# We want these top-level files to appear in the build directory:
+env.Local('SConstruct')
+env.Local('changes.txt')
+env.Local('README.txt')
+env.Local('LICENSE.txt')
+env.Local('NOTICE.txt')
+
+# We want these directories to appear in the build directory, even though there
+# are no explicit dependencies on them.
+bin_dir = env.Dir('#bin')
+scons_dir = env.Dir('#scons')
+
+import os, os.path
+home = env.Dir('#' + env['ONYX_HOME']).abspath
+
+for dir in (bin_dir, scons_dir):
+    env.LocalAllFilesInDir(dir, home)
+
+# run the SConscript files using the env that SConstruct has set up
+import os
+env.SConscript(list(os.path.join(dir, 'SConscript') for dir in dirs))
+

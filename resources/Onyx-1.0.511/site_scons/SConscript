@@ -1,0 +1,15 @@
+##############################################################################
+#
+# File:         SConscript (directory: ./site_scons)
+# Date:         5-Oct-2007
+# Author:       Hugh Secker-Walker
+# Description:  Verify site-specific SCons initialization
+#
+# Copyright 2007, The Johns Hopkins University.  All rights reserved.  
+#
+##############################################################################
+
+
+# standard Onyx treatment of Python code
+Import('env')
+env.PyFile('site_init.py')

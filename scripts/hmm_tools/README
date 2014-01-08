@@ -1,0 +1,10 @@
+Contents:
+gmmem_htk.m                          - Replacement for netlab's gmmem: EM using HTK
+gmmem_htk_parallel.m              - EM using HTK and also exploiting multiple cores (if n_cores > 2) 
+gmmem_init_htk_inc.m              - EM using HTK. Incrementally increase number of mixture components.
+gmmem_init_htk.m                    - EM using HTK (either in parallel mode or not). Initialize with HInit (KMeans + multiple Viterbis)
+gmm_htk2matlab.m                   - Convert an HTK formatted model to matlab (netlab format)
+gmm_matlab2htk.m                   - Convert a netlab-formatted gmm to htk
+HERest_gmm_parallel.py           - Python script to parallelize GMM training using HTK
+test_gmm_htk.m                       - Test the various alternatives.
+

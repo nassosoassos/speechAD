@@ -1,0 +1,94 @@
+---
+- __onyx_yaml__stream_version: "0"
+  __onyx_yaml__meta_version: "1"
+  __onyx_yaml__stream_type: "OnyxText"
+- - stream_type OnyxText stream_version 0 data_type ModelDict data_version 0
+  - num_models 3
+  - model_keys List 3
+  - class2 class3 class1
+  - model_indices List 3
+  - 1 2 0
+---
+- __onyx_yaml__stream_version: "0"
+  __onyx_yaml__meta_version: "1"
+  __onyx_yaml__stream_type: "OnyxText"
+- - stream_type OnyxText stream_version 0 data_type GmmManager data_version 0
+  - GmmMgr IndexedCollection Gmm 3
+  - Gmm 0
+  - covariance_type Singleton onyx.am.gaussian.GaussianModelBase.DIAGONAL_COVARIANCE
+  - dimension 2
+  - num_components 1
+  - relevances List 3
+  - 0.0 0.0 0.0
+  - weights Array 1 1
+  - +(+0000)0x0000000000000
+  - Gaussians IndexedCollection SimpleGaussian 1
+  - SimpleGaussian 0
+  - means Array 1 2
+  - +(-1023)0x0000000000000 +(-1023)0x0000000000000
+  - vars Array 1 2
+  - +(+0000)0x0000000000000 +(+0000)0x0000000000000
+  - Gmm 1
+  - covariance_type Singleton onyx.am.gaussian.GaussianModelBase.DIAGONAL_COVARIANCE
+  - dimension 2
+  - num_components 1
+  - relevances List 3
+  - 0.0 0.0 0.0
+  - weights Array 1 1
+  - +(+0000)0x0000000000000
+  - Gaussians IndexedCollection SimpleGaussian 1
+  - SimpleGaussian 0
+  - means Array 1 2
+  - +(-1023)0x0000000000000 +(-1023)0x0000000000000
+  - vars Array 1 2
+  - +(+0000)0x0000000000000 +(+0000)0x0000000000000
+  - Gmm 2
+  - covariance_type Singleton onyx.am.gaussian.GaussianModelBase.DIAGONAL_COVARIANCE
+  - dimension 2
+  - num_components 1
+  - relevances List 3
+  - 0.0 0.0 0.0
+  - weights Array 1 1
+  - +(+0000)0x0000000000000
+  - Gaussians IndexedCollection SimpleGaussian 1
+  - SimpleGaussian 0
+  - means Array 1 2
+  - +(-1023)0x0000000000000 +(-1023)0x0000000000000
+  - vars Array 1 2
+  - +(+0000)0x0000000000000 +(+0000)0x0000000000000
+---
+- __onyx_yaml__stream_version: "0"
+  __onyx_yaml__meta_version: "1"
+  __onyx_yaml__stream_type: "OnyxText"
+- - stream_type OnyxText stream_version 0 data_type HmmManager data_version 0
+  - HmmMgr IndexedCollection Hmm 3
+  - Hmm 0
+  - num_inputs 1
+  - num_states 1
+  - num_outputs 1
+  - transition_matrix Array 2 3 3
+  - +(-1023)0x0000000000000 +(+0000)0x0000000000000 +(-1023)0x0000000000000
+  - +(-1023)0x0000000000000 +(-1023)0x0000000000000 +(+0000)0x0000000000000
+  - +(-1023)0x0000000000000 +(-1023)0x0000000000000 +(-1023)0x0000000000000
+  - models List 1
+  - 0
+  - Hmm 1
+  - num_inputs 1
+  - num_states 1
+  - num_outputs 1
+  - transition_matrix Array 2 3 3
+  - +(-1023)0x0000000000000 +(+0000)0x0000000000000 +(-1023)0x0000000000000
+  - +(-1023)0x0000000000000 +(-1023)0x0000000000000 +(+0000)0x0000000000000
+  - +(-1023)0x0000000000000 +(-1023)0x0000000000000 +(-1023)0x0000000000000
+  - models List 1
+  - 1
+  - Hmm 2
+  - num_inputs 1
+  - num_states 1
+  - num_outputs 1
+  - transition_matrix Array 2 3 3
+  - +(-1023)0x0000000000000 +(+0000)0x0000000000000 +(-1023)0x0000000000000
+  - +(-1023)0x0000000000000 +(-1023)0x0000000000000 +(+0000)0x0000000000000
+  - +(-1023)0x0000000000000 +(-1023)0x0000000000000 +(-1023)0x0000000000000
+  - models List 1
+  - 2

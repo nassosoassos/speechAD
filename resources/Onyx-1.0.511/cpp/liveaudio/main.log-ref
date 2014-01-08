@@ -1,0 +1,39 @@
+LiveAudioInput: Initialized
+LiveAudioInput: Recording started: ptr="0x180ec00"
+LiveAudioInput: Stopping: ptr="0x180ec00"
+LiveAudioInput: Joining ptr="0x180ec00"
+LiveAudioInput: Recording stopped: ptr="0x180ec00" dropped 0
+
+LiveAudioInput: Recording started: ptr="0x180ec00"
+LiveAudioInput: Stopping: ptr="0x180ec00"
+LiveAudioInput: Joining ptr="0x180ec00"
+LiveAudioInput: Recording stopped: ptr="0x180ec00" dropped 0
+
+liveval 0
+
+delay line:
+1  0
+2  0
+3  0
+4  0
+5  0
+6  1
+7  2
+8  3
+9  4
+10  5
+11  6
+12  7
+13  8
+14  9
+15  10
+16  11
+17  0
+18  0
+19  0
+20  0
+21  0
+22  17
+23  18
+24  19
+25  20

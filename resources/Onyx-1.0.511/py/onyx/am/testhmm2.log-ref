@@ -1,0 +1,664 @@
+================================  TEST 0  ===========================
+Hmm: num_states = 0
+Hmm: num_states = 0
+================================  TEST 1  ===========================
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = full, Dim = 2, NumComps = 2)
+Weights   Models
+ 0.5000     SGM: (Type = full, Dim = 2)  Means: 1.5000 1.5000    Vars:
+ 1.0000 0.0000
+ 0.0000 1.0000
+ 0.5000     SGM: (Type = full, Dim = 2)  Means: 3.0000 3.0000    Vars:
+ 1.0000 0.0000
+ 0.0000 1.0000
+ Transition probabilities:
+[[ 0.   1.   0. ]
+ [ 0.   0.5  0.5]
+ [ 0.   0.   0. ]]
+Gmm: (Type = full, Dim = 2, NumComps = 2)
+Weights   Models
+ 0.5000     SGM: (Type = full, Dim = 2)  Means: 1.5000 1.5000    Vars:
+ 1.0000 0.0000
+ 0.0000 1.0000
+ 0.5000     SGM: (Type = full, Dim = 2)  Means: 3.0000 3.0000    Vars:
+ 1.0000 0.0000
+ 0.0000 1.0000
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = full, Dim = 2, NumComps = 2)
+Weights   Models
+ 0.9650     SGM: (Type = full, Dim = 2)  Means: 1.0114 0.9951    Vars:
+ 0.0931 0.0221
+ 0.0221 0.0897
+ 0.0350     SGM: (Type = full, Dim = 2)  Means: 1.2198 1.2093    Vars:
+ 0.0491 0.0340
+ 0.0340 0.0724
+ Transition probabilities:
+[[ 0.    1.    0.  ]
+ [ 0.    0.99  0.01]
+ [ 0.    0.    0.  ]]
+Gmm: (Type = full, Dim = 2, NumComps = 2)
+Weights   Models
+ 0.9650     SGM: (Type = full, Dim = 2)  Means: 1.0114 0.9951    Vars:
+ 0.0931 0.0221
+ 0.0221 0.0897
+ 0.0350     SGM: (Type = full, Dim = 2)  Means: 1.2198 1.2093    Vars:
+ 0.0491 0.0340
+ 0.0340 0.0724
+================================  TEST 2  ===========================
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = full, Dim = 2, NumComps = 2)
+Weights   Models
+ 0.5000     SGM: (Type = full, Dim = 2)  Means: 1.5000 1.5000    Vars:
+ 1.0000 0.0000
+ 0.0000 1.0000
+ 0.5000     SGM: (Type = full, Dim = 2)  Means: 3.0000 3.0000    Vars:
+ 1.0000 0.0000
+ 0.0000 1.0000
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+
+Gmm: (Type = full, Dim = 2, NumComps = 2)
+Weights   Models
+ 0.5000     SGM: (Type = full, Dim = 2)  Means: 1.5000 1.5000    Vars:
+ 1.0000 0.0000
+ 0.0000 1.0000
+ 0.5000     SGM: (Type = full, Dim = 2)  Means: 3.0000 3.0000    Vars:
+ 1.0000 0.0000
+ 0.0000 1.0000
+
+
+
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = full, Dim = 2, NumComps = 2)
+Weights   Models
+ 0.9701     SGM: (Type = full, Dim = 2)  Means: 1.0137 0.9975    Vars:
+ 0.0926 0.0231
+ 0.0231 0.0898
+ 0.0299     SGM: (Type = full, Dim = 2)  Means: 1.1782 1.1693    Vars:
+ 0.0778 0.0237
+ 0.0237 0.0896
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+
+Gmm: (Type = full, Dim = 2, NumComps = 2)
+Weights   Models
+ 0.9701     SGM: (Type = full, Dim = 2)  Means: 1.0137 0.9975    Vars:
+ 0.0926 0.0231
+ 0.0231 0.0898
+ 0.0299     SGM: (Type = full, Dim = 2)  Means: 1.1782 1.1693    Vars:
+ 0.0778 0.0237
+ 0.0237 0.0896
+================================  TEST 2a  ===========================
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 2)
+Weights   Models
+ 0.5000     SGM: (Type = diagonal, Dim = 2)  Means: 1.5000 1.5000    Vars: 1.0000 1.0000
+ 0.5000     SGM: (Type = diagonal, Dim = 2)  Means: 3.0000 3.0000    Vars: 1.0000 1.0000
+ Transition probabilities:
+[[  0.00000000e+00   1.00000000e+00   0.00000000e+00]
+ [  0.00000000e+00   1.00000000e+00   1.00000000e-12]
+ [  0.00000000e+00   0.00000000e+00   0.00000000e+00]]
+
+Gmm: (Type = diagonal, Dim = 2, NumComps = 2)
+Weights   Models
+ 0.5000     SGM: (Type = diagonal, Dim = 2)  Means: 1.5000 1.5000    Vars: 1.0000 1.0000
+ 0.5000     SGM: (Type = diagonal, Dim = 2)  Means: 3.0000 3.0000    Vars: 1.0000 1.0000
+
+
+
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 2)
+Weights   Models
+ 0.9493     SGM: (Type = diagonal, Dim = 2)  Means: 1.0187 0.9750    Vars: 0.0898 0.0869
+ 0.0507     SGM: (Type = diagonal, Dim = 2)  Means: 1.3245 1.3243    Vars: 0.0341 0.0656
+ Transition probabilities:
+[[ 0.    1.    0.  ]
+ [ 0.    0.99  0.01]
+ [ 0.    0.    0.  ]]
+
+Gmm: (Type = diagonal, Dim = 2, NumComps = 2)
+Weights   Models
+ 0.9493     SGM: (Type = diagonal, Dim = 2)  Means: 1.0187 0.9750    Vars: 0.0898 0.0869
+ 0.0507     SGM: (Type = diagonal, Dim = 2)  Means: 1.3245 1.3243    Vars: 0.0341 0.0656
+================================  TEST 3  ===========================
+=======================  TEST 3 (dataset 0, 1 passes)  =================
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: -1.5657 0.1103    Vars: 2.7890 9.5437
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+=======================  TEST 3 (dataset 0, 4 passes)  =================
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: -1.5657 0.1103    Vars: 2.7890 9.5437
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+=======================  TEST 3 (dataset 1, 1 passes)  =================
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 3.0827 -2.9364    Vars: 0.9900 0.9900
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+=======================  TEST 3 (dataset 1, 4 passes)  =================
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 3.0827 -2.9364    Vars: 0.9900 0.9900
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+=======================  TEST 3 (dataset 2, 1 passes)  =================
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0813 -0.0050    Vars: 0.9899 0.9900
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+=======================  TEST 3 (dataset 2, 4 passes)  =================
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0813 -0.0050    Vars: 0.9899 0.9900
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+================================  TEST 4  ===========================
+[-1.565685  0.110325]
+[ 2.78898624  9.5437458 ]
+
+[ 3.08265 -2.93639]
+[ 0.99004737  0.98995612]
+
+[ 0.08134 -0.005  ]
+[ 0.98993196  0.99003822]
+================================  TEST 5  ===========================
+=======================  TEST 5 (1 passes)  =================
+Hmm: num_states = 3
+  Models (dim = 2):
+  GmmMgr index list: [0, 1, 2]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+ Transition probabilities:
+[[ 0.   1.   0.   0.   0. ]
+ [ 0.   0.5  0.5  0.   0. ]
+ [ 0.   0.   0.5  0.5  0. ]
+ [ 0.   0.   0.   0.5  0.5]
+ [ 0.   0.   0.   0.   0. ]]
+Hmm: num_states = 3
+  Models (dim = 2):
+  GmmMgr index list: [0, 1, 2]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.6400 1.6331    Vars: 0.6285 0.6422
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.5227 2.5226    Vars: 0.5987 0.5979
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.9454 2.9469    Vars: 0.3541 0.3349
+ Transition probabilities:
+[[ 0.          1.          0.          0.          0.        ]
+ [ 0.          0.72727273  0.27272727  0.          0.        ]
+ [ 0.          0.          0.72727273  0.27272727  0.        ]
+ [ 0.          0.          0.          0.72727273  0.27272727]
+ [ 0.          0.          0.          0.          0.        ]]
+=======================  TEST 5 (4 passes)  =================
+Hmm: num_states = 3
+  Models (dim = 2):
+  GmmMgr index list: [0, 1, 2]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+ Transition probabilities:
+[[ 0.   1.   0.   0.   0. ]
+ [ 0.   0.5  0.5  0.   0. ]
+ [ 0.   0.   0.5  0.5  0. ]
+ [ 0.   0.   0.   0.5  0.5]
+ [ 0.   0.   0.   0.   0. ]]
+Hmm: num_states = 3
+  Models (dim = 2):
+  GmmMgr index list: [0, 1, 2]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.6400 1.6331    Vars: 0.6285 0.6422
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.5227 2.5226    Vars: 0.5987 0.5979
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.9454 2.9469    Vars: 0.3541 0.3349
+ Transition probabilities:
+[[ 0.          1.          0.          0.          0.        ]
+ [ 0.          0.72727273  0.27272727  0.          0.        ]
+ [ 0.          0.          0.72727273  0.27272727  0.        ]
+ [ 0.          0.          0.          0.72727273  0.27272727]
+ [ 0.          0.          0.          0.          0.        ]]
+Hmm: num_states = 3
+  Models (dim = 2):
+  GmmMgr index list: [0, 1, 2]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.4076 1.3945    Vars: 0.3498 0.3541
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.4621 2.4715    Vars: 0.4302 0.4291
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 3.0240 3.0238    Vars: 0.2886 0.2709
+ Transition probabilities:
+[[ 0.          1.          0.          0.          0.        ]
+ [ 0.          0.71284529  0.28715471  0.          0.        ]
+ [ 0.          0.          0.6425702   0.3574298   0.        ]
+ [ 0.          0.          0.          0.78812682  0.21187318]
+ [ 0.          0.          0.          0.          0.        ]]
+Hmm: num_states = 3
+  Models (dim = 2):
+  GmmMgr index list: [0, 1, 2]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.2999 1.2808    Vars: 0.2825 0.2785
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3622 2.3723    Vars: 0.3618 0.3587
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 3.0452 3.0466    Vars: 0.2846 0.2657
+ Transition probabilities:
+[[ 0.          1.          0.          0.          0.        ]
+ [ 0.          0.670832    0.329168    0.          0.        ]
+ [ 0.          0.          0.67970476  0.32029524  0.        ]
+ [ 0.          0.          0.          0.79338494  0.20661506]
+ [ 0.          0.          0.          0.          0.        ]]
+Hmm: num_states = 3
+  Models (dim = 2):
+  GmmMgr index list: [0, 1, 2]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.1971 1.1732    Vars: 0.2257 0.2120
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.2414 2.2480    Vars: 0.3085 0.3033
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 3.0434 3.0475    Vars: 0.2877 0.2687
+ Transition probabilities:
+[[ 0.          1.          0.          0.          0.        ]
+ [ 0.          0.61689019  0.38310981  0.          0.        ]
+ [ 0.          0.          0.69097947  0.30902053  0.        ]
+ [ 0.          0.          0.          0.80596658  0.19403342]
+ [ 0.          0.          0.          0.          0.        ]]
+================================  TEST 6  ===========================
+Hmm: num_states = 6
+  Models (dim = 2):
+  GmmMgr index list: [0, 1, 2, 3, 4, 5]
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+ Transition probabilities:
+[[ 0.   0.   1.   0.   0.   0.   0.   0.   0.   0.   0. ]
+ [ 0.   0.   0.   1.   0.   0.   0.   0.   0.   0.   0. ]
+ [ 0.   0.   0.5  0.5  0.   0.   0.   0.   0.   0.   0. ]
+ [ 0.   0.   0.   0.5  0.5  0.   0.   0.   0.   0.   0. ]
+ [ 0.   0.   0.   0.   0.5  0.5  0.   0.   0.   0.   0. ]
+ [ 0.   0.   0.   0.   0.   0.5  0.4  0.   0.1  0.   0. ]
+ [ 0.   0.   0.   0.   0.   0.   0.5  0.4  0.   0.1  0. ]
+ [ 0.   0.   0.   0.   0.   0.   0.   0.5  0.   0.   0.5]
+ [ 0.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0. ]
+ [ 0.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0. ]
+ [ 0.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0. ]]
+Hmm: num_states = 6
+  Models (dim = 2):
+  GmmMgr index list: [0, 1, 2, 3, 4, 5]
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+ Transition probabilities:
+[[ 0.          0.          1.          0.          0.          0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          1.          0.          0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.49752066  0.50247934  0.          0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.53311793  0.46688207  0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.53311793  0.46688207
+   0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.53311793
+   0.42649435  0.          0.04038772  0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.
+   0.51470588  0.41176471  0.          0.07352941  0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.5         0.          0.          0.5       ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.          0.        ]]
+================================  TEST 7  ===========================
+Hmm: num_states = 6
+  Models (dim = 2):
+  GmmMgr index list: [0, 1, 2, 3, 4, 5]
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+ Transition probabilities:
+[[ 0.   0.   1.   0.   0.   0.   0.   0.   0.   0.   0. ]
+ [ 0.   0.   0.   1.   0.   0.   0.   0.   0.   0.   0. ]
+ [ 0.   0.   0.5  0.5  0.   0.   0.   0.   0.   0.   0. ]
+ [ 0.   0.   0.   0.5  0.5  0.   0.   0.   0.   0.   0. ]
+ [ 0.   0.   0.   0.   0.5  0.5  0.   0.   0.   0.   0. ]
+ [ 0.   0.   0.   0.   0.   0.5  0.4  0.   0.1  0.   0. ]
+ [ 0.   0.   0.   0.   0.   0.   0.5  0.4  0.   0.1  0. ]
+ [ 0.   0.   0.   0.   0.   0.   0.   0.5  0.   0.   0.5]
+ [ 0.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0. ]
+ [ 0.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0. ]
+ [ 0.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0. ]]
+[-Inf -Inf -Inf]
+[-Inf -Inf -Inf]
+[-Inf -Inf -Inf]
+[-Inf -Inf -Inf]
+[-Inf -Inf -Inf]
+[-Inf -Inf -Inf]
+[-Inf -Inf -Inf]
+[-Inf -Inf -Inf]
+[-Inf -Inf -Inf]
+[-Inf -Inf -Inf]
+[-Inf -Inf -Inf]
+None
+None
+[-Inf -Inf]
+[-Inf -Inf]
+[-Inf -Inf]
+[       -Inf -2.37561777]
+[-3.06876495 -1.73376388]
+[-2.19329621 -1.24421566]
+[-1.61014992 -0.92869878]
+[-1.21246696 -0.77875864]
+[-0.97228194 -0.7599493 ]
+[-0.86049053 -0.84144234]
+[-0.85092108 -1.00032116]
+Hmm: num_states = 6
+  Models (dim = 2):
+  GmmMgr index list: [0, 1, 2, 3, 4, 5]
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+DummyModel (Dim = 2) always returning a score of 1.0
+ Transition probabilities:
+[[ 0.          0.          1.          0.          0.          0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          1.          0.          0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.49752066  0.50247934  0.          0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.53311793  0.46688207  0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.53311793  0.46688207
+   0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.53311793
+   0.42649435  0.          0.04038772  0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.
+   0.51470588  0.41176471  0.          0.07352941  0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.5         0.          0.          0.5       ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.          0.        ]]
+================================  TEST 8  ===========================
+=======================  TEST 8 (1 passes)  =================
+Hmm: num_states = 3
+  Models (dim = 2):
+  GmmMgr index list: [0, 0, 0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+ Transition probabilities:
+[[ 0.   1.   0.   0.   0. ]
+ [ 0.   0.5  0.5  0.   0. ]
+ [ 0.   0.   0.5  0.5  0. ]
+ [ 0.   0.   0.   0.5  0.5]
+ [ 0.   0.   0.   0.   0. ]]
+Hmm: num_states = 3
+  Models (dim = 2):
+  GmmMgr index list: [0, 0, 0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3704 2.3661    Vars: 0.8302 0.8095
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3704 2.3661    Vars: 0.8302 0.8095
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3704 2.3661    Vars: 0.8302 0.8095
+ Transition probabilities:
+[[ 0.          1.          0.          0.          0.        ]
+ [ 0.          0.72727273  0.27272727  0.          0.        ]
+ [ 0.          0.          0.72727273  0.27272727  0.        ]
+ [ 0.          0.          0.          0.72727273  0.27272727]
+ [ 0.          0.          0.          0.          0.        ]]
+=======================  TEST 8 (4 passes)  =================
+Hmm: num_states = 3
+  Models (dim = 2):
+  GmmMgr index list: [0, 0, 0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+ Transition probabilities:
+[[ 0.   1.   0.   0.   0. ]
+ [ 0.   0.5  0.5  0.   0. ]
+ [ 0.   0.   0.5  0.5  0. ]
+ [ 0.   0.   0.   0.5  0.5]
+ [ 0.   0.   0.   0.   0. ]]
+Hmm: num_states = 3
+  Models (dim = 2):
+  GmmMgr index list: [0, 0, 0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3704 2.3661    Vars: 0.8302 0.8095
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3704 2.3661    Vars: 0.8302 0.8095
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3704 2.3661    Vars: 0.8302 0.8095
+ Transition probabilities:
+[[ 0.          1.          0.          0.          0.        ]
+ [ 0.          0.72727273  0.27272727  0.          0.        ]
+ [ 0.          0.          0.72727273  0.27272727  0.        ]
+ [ 0.          0.          0.          0.72727273  0.27272727]
+ [ 0.          0.          0.          0.          0.        ]]
+Hmm: num_states = 3
+  Models (dim = 2):
+  GmmMgr index list: [0, 0, 0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3704 2.3661    Vars: 0.8302 0.8095
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3704 2.3661    Vars: 0.8302 0.8095
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3704 2.3661    Vars: 0.8302 0.8095
+ Transition probabilities:
+[[ 0.          1.          0.          0.          0.        ]
+ [ 0.          0.72727273  0.27272727  0.          0.        ]
+ [ 0.          0.          0.72727273  0.27272727  0.        ]
+ [ 0.          0.          0.          0.72727273  0.27272727]
+ [ 0.          0.          0.          0.          0.        ]]
+Hmm: num_states = 3
+  Models (dim = 2):
+  GmmMgr index list: [0, 0, 0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3704 2.3661    Vars: 0.8302 0.8095
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3704 2.3661    Vars: 0.8302 0.8095
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3704 2.3661    Vars: 0.8302 0.8095
+ Transition probabilities:
+[[ 0.          1.          0.          0.          0.        ]
+ [ 0.          0.72727273  0.27272727  0.          0.        ]
+ [ 0.          0.          0.72727273  0.27272727  0.        ]
+ [ 0.          0.          0.          0.72727273  0.27272727]
+ [ 0.          0.          0.          0.          0.        ]]
+Hmm: num_states = 3
+  Models (dim = 2):
+  GmmMgr index list: [0, 0, 0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3704 2.3661    Vars: 0.8302 0.8095
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3704 2.3661    Vars: 0.8302 0.8095
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3704 2.3661    Vars: 0.8302 0.8095
+ Transition probabilities:
+[[ 0.          1.          0.          0.          0.        ]
+ [ 0.          0.72727273  0.27272727  0.          0.        ]
+ [ 0.          0.          0.72727273  0.27272727  0.        ]
+ [ 0.          0.          0.          0.72727273  0.27272727]
+ [ 0.          0.          0.          0.          0.        ]]

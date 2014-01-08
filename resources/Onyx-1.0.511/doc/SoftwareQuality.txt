@@ -1,0 +1,169 @@
+===========================================================================
+=
+= File:         SoftwareQuality.txt
+= Date:         20-Nov-2008
+= Author:       Hugh Secker-Walker, Ken Basye
+= Description:  Overview of Software Quality tools and policies in the project
+=
+= This file is part of Onyx   http://onyxtools.sourceforge.net
+=
+= Copyright 2008 The Johns Hopkins University
+=
+= Licensed under the Apache License, Version 2.0 (the "License").
+= You may not use this file except in compliance with the License.
+= You may obtain a copy of the License at
+=   http://www.apache.org/licenses/LICENSE-2.0
+= 
+= Unless required by applicable law or agreed to in writing, software
+= distributed under the License is distributed on an "AS IS" BASIS,
+= WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+= implied.  See the License for the specific language governing
+= permissions and limitations under the License.
+=
+===========================================================================
+
+
+"If it isn't tested, it's broken."
+                 -- Aubrey Jaffer
+
+"Every bug is really two bugs -- the bug in the code and the bug in the tests."
+                 -- Joev Dubach
+
+
+Version Control
+
+We use Bazaar (bzr), a distributed version control system, for managing the
+lifecycle of code, sub-projects, documentation, and presentations.  There is a
+central code repository on Onyx's primary file server, which is backed up
+regularly.  The distributed nature of Bazaar makes it easy for users to do work
+and commit changes on their personal machine before syncing with the central
+repository.
+
+We have extended Bazaar slightly in order to support a history file,
+changes.txt.  This file has informative prose about the changes implemented and
+the files affected at each checkin.  This prose record makes it easy to see what
+projects are (or were) being worked on at any time, and it's also very useful
+for getting a sense of how things are organized as the project evolves.
+
+
+Building and Testing
+
+We use SCons for building and testing the project.  SCons has deep native
+support for identifying and managing dependencies between checked-in files and
+built files in many machine languages.  We use its native support for C/C++ code
+for our (few) C-based libraries.  SCons is readily extensible, and we have
+extended it in order to handle dependencies and testing of our main Python
+codebase.  Our configuration of SCons builds and tests all our code on Mac,
+Windows, 32-bit Ubuntu Linux, and 64-bit Red Hat Linux (for use on our
+high-performance computing cluster).
+
+
+Primary Language
+
+We use Python as the primary language for implementing the modules of the
+toolkit.  Python is a powerful, full-fledged computer language with a very
+simple, readable syntax.  It has very productive scripting support for rapid
+proto-typing and experimental design work.  Python is open, very stable and
+well-documented, and has a remarkable record both for backwards compatibility
+and careful evolution of core features.  Both the Bazaar version control system
+and the SCons build system are written in Python.
+
+Python itself includes a large set of components (i.e. batteries included) and
+provides this functionality on a large number of platforms.  Use of Python leads
+to an overall consistency of idioms throughout the project, whether for core
+tools, higher-level features, or experiment-running scripts.  For numerical work
+we use the Numpy plug-in package for Python.  This package includes many
+high-performance C and Fortran libraries.  It provides very powerful facilities
+for working with multidimensional numerical data from Python code.  It includes
+extensive linear algebra, DSP, and optimization libraries.  Python also makes it
+straightforward to integrate our own C/C++ code as plug-ins.
+
+
+Bug/Request Tracking
+
+We know that a well-integrated bug/request tracking system is very important.
+As we enter the first user phase of this project we are looking at various open
+tools that we could use.  We need a tool that will integrate with the
+build/testing system so that each request or defect that is marked (claimed)
+complete will point to the revision in which the completion happened and will
+point to the specific tests, which demonstrate the claimed feature or fix.  For
+now we use email and the prose record in the changes.txt file.
+
+
+Documentation and Testing (and code samples)
+
+Our testing and documentation are very closely tied together, and are integrated
+into the code itself.  We use Python's doctest facility for each module,
+function, class, or method that is tested.  The doctest facility uses the
+existing Python documentation support whereby documentation is written
+immediately inside the declaration of the object being documented.  With doctest
+you get more; sections of this documentation that look like interactions with a
+live interpreter can actually be run automatically in the interpreter.  This
+means that the prose of the documentation can talk about features of an
+interface and then give bona fide example code that uses the interface.  Doctest
+will automatically run and verify those examples.  Overall, for a given
+component, this means that the documentation, the tests and sample code, and the
+implementation code all appear together in the same file.  At present, circa
+2009/03 there are over 2000 individual tests.
+
+
+Testing and Checkin
+
+The SCons system knows about dependencies for the project's tests and it runs
+all out-of-date tests when it builds the system.  A test failure constitutes a
+build failure.  Checkins are only allowed if the build is successful.  This
+means that at each checkin, all tests are passing.  When someone is working on
+code in a module, just two keystrokes will cause all the doctests in that module
+to be run and a one-line summary of success (often, or multiple lines
+pinpointing the failure) to be displayed.  Longer running tests are also
+integrated into the code that's being tested.  These tests are run automatically
+by SCons, and any one of them can be invoked from the command-line.
+
+
+Release 
+
+We are in the process of creating a release process using SCons.  This will
+create a distributable stand-alone snapshot of the current revision of the
+project.  We will keep each such released stand-alone version of the project in
+a live, online archive so that reproducing behavior of any release will be
+possible at any time.  It is likely that the releases will be integrated with
+Tags in the Bazaar version control system so that instantiating prior
+installation of the development platform will be very straightforward.
+
+We have recently specified how we will do version labeling for these releases.
+This versioning will be tied to the backwards compatibility semantics that we
+are implementing so that users will know when interfaces can be expected to
+change and not change.  This versioning will also indicate the simple paths by
+which persistent data files can be upgraded as their formats evolve.
+
+
+HTML Documentation
+
+There are two ways to get a browseable form of the documentation.
+
+Python's built-in pydoc facility works with our code.  With pydoc, the
+interpreter implements a simple web server that lets you browse the
+documentation for all the Python code that the interpreter can see on your
+system.  This lets you view our toolkit documentation in the context of all the
+documentation for the language.
+
+We also use the epydoc documentation system, a third party documentation tool
+specifically targeting Python.  Epydoc arranges the web pages it generates in a
+format that is familiar to anyone who has looked at Java documentation.  It
+captures extensive details about object hierarchies and also about conventions
+in the Python language.  Epydoc also understands the doctest feature.  This
+means that on the HTML pages it generates from the documentation, it sets off
+the live interpreter interactions and code samples in boxes with "code" style
+font and formatting.
+
+
+Display Tools
+
+Visual Graphical Display is essential for ASR research work.  We are using
+dot/Graphviz to display any of the numerous internal objects that have graphical
+structure.  Each such object knows how to render itself to the DOT language (and
+the testing structure verifies this behavior).  We have informally specified
+what we need in a more general-purpose display tool.  For now, we use matplotlib
+(a Python plug-in, part of the SciPy package) for general purpose display, but
+we feel it has some severe limitations with respect to the kinds of display we
+know we need.

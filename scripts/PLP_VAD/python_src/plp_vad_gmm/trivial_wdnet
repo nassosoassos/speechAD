@@ -1,0 +1,14 @@
+VERSION=1.0
+N=5    L=7    
+I=0    W=NS                  
+I=1    W=!NULL               
+I=2    W=S                   
+I=3    W=!NULL               
+I=4    W=!NULL               
+J=0     S=1    E=0    
+J=1     S=4    E=0    
+J=2     S=0    E=1    
+J=3     S=2    E=1    
+J=4     S=1    E=2    
+J=5     S=4    E=2    
+J=6     S=1    E=3    

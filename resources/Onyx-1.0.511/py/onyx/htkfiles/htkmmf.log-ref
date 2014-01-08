@@ -1,0 +1,406 @@
+htkmmf_read: contents = 
+~o
+<STREAMINFO> 1 2
+<VECSIZE> 2 <NULLD><USER>
+~h "class1"
+<BEGINHMM>
+<NumStates> 3
+<State> 2
+<Mean> 2
+ 0.0 0.0
+<Variance> 2
+ 1.0 1.0
+<TransP> 3
+0.0 1.0 0.0
+0.0 0.0 1.0
+0.0 0.0 0.0
+<ENDHMM>
+~h "class2"
+<BEGINHMM>
+<NumStates> 3
+<State> 2
+<Mean> 2
+ 0.0 0.0
+<Variance> 2
+ 1.0 1.0
+<TransP> 3
+0.0 1.0 0.0
+0.0 0.0 1.0
+0.0 0.0 0.0
+<ENDHMM>
+~h "class3"
+<BEGINHMM>
+<NumStates> 3
+<State> 2
+<Mean> 2
+ 0.0 0.0
+<Variance> 2
+ 1.0 1.0
+<TransP> 3
+0.0 1.0 0.0
+0.0 0.0 1.0
+0.0 0.0 0.0
+<ENDHMM>
+
+htkmmf_read: result = 
+{'models': [('HMM',
+             attrdict({'decl': 'class1', 'states': [('state', attrdict({'var': array([[ 1.,  1.]]), 'statenum': 2, 'mean': array([[ 0.,  0.]])}))], 'transp': array([[ 0.,  1.,  0.],
+       [ 0.,  0.,  1.],
+       [ 0.,  0.,  0.]]), 'numstates': 3})),
+            ('HMM',
+             attrdict({'decl': 'class2', 'states': [('state', attrdict({'var': array([[ 1.,  1.]]), 'statenum': 2, 'mean': array([[ 0.,  0.]])}))], 'transp': array([[ 0.,  1.,  0.],
+       [ 0.,  0.,  1.],
+       [ 0.,  0.,  0.]]), 'numstates': 3})),
+            ('HMM',
+             attrdict({'decl': 'class3', 'states': [('state', attrdict({'var': array([[ 1.,  1.]]), 'statenum': 2, 'mean': array([[ 0.,  0.]])}))], 'transp': array([[ 0.,  1.,  0.],
+       [ 0.,  0.,  1.],
+       [ 0.,  0.,  0.]]), 'numstates': 3}))],
+ 'options': {'duration': 'nulld',
+             'feature_kind': ['USER'],
+             'streaminfo': (1, 2),
+             'vecsize': 2}}
+htkmmf_read: m = 
+attrdict({'decl': 'class1', 'states': [('state', attrdict({'var': array([[ 1.,  1.]]), 'statenum': 2, 'mean': array([[ 0.,  0.]])}))], 'transp': array([[ 0.,  1.,  0.],
+       [ 0.,  0.,  1.],
+       [ 0.,  0.,  0.]]), 'numstates': 3})
+htkmmf_read: m.keys() = 
+['decl', 'states', 'transp', 'numstates']
+htkmmf_read: state.keys() = 
+['var', 'statenum', 'mean']
+htkmmf_read: gmm = Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+htkmmf_read: m = 
+attrdict({'decl': 'class2', 'states': [('state', attrdict({'var': array([[ 1.,  1.]]), 'statenum': 2, 'mean': array([[ 0.,  0.]])}))], 'transp': array([[ 0.,  1.,  0.],
+       [ 0.,  0.,  1.],
+       [ 0.,  0.,  0.]]), 'numstates': 3})
+htkmmf_read: m.keys() = 
+['decl', 'states', 'transp', 'numstates']
+htkmmf_read: state.keys() = 
+['var', 'statenum', 'mean']
+htkmmf_read: gmm = Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+htkmmf_read: m = 
+attrdict({'decl': 'class3', 'states': [('state', attrdict({'var': array([[ 1.,  1.]]), 'statenum': 2, 'mean': array([[ 0.,  0.]])}))], 'transp': array([[ 0.,  1.,  0.],
+       [ 0.,  0.,  1.],
+       [ 0.,  0.,  0.]]), 'numstates': 3})
+htkmmf_read: m.keys() = 
+['decl', 'states', 'transp', 'numstates']
+htkmmf_read: state.keys() = 
+['var', 'statenum', 'mean']
+htkmmf_read: gmm = Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+GmmMgr with 3 models of type <class 'onyx.am.gaussian.GaussianMixtureModel'>
+  (dimension 2, covariance_type onyx.am.gaussian.GaussianModelBase.DIAGONAL_COVARIANCE)
+Built model class2 at index 1:
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [1]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+
+Built model class3 at index 2:
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [2]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+
+Built model class1 at index 0:
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+
+
+htkmmf_read: contents = 
+~o
+<STREAMINFO> 1 2
+<VECSIZE> 2<NULLD><USER><DIAGC>
+~h "class1"
+<BEGINHMM>
+<NUMSTATES> 3
+<STATE> 2
+<MEAN> 2
+ -1.565675e+00 1.103529e-01
+<VARIANCE> 2
+ 2.789062e+00 9.543747e+00
+<GCONST> 6.957346e+00
+<TRANSP> 3
+ 0.000000e+00 1.000000e+00 0.000000e+00
+ 0.000000e+00 0.000000e+00 1.000000e+00
+ 0.000000e+00 0.000000e+00 0.000000e+00
+<ENDHMM>
+~h "class2"
+<BEGINHMM>
+<NUMSTATES> 3
+<STATE> 2
+<MEAN> 2
+ 3.082720e+00 -2.936473e+00
+<VARIANCE> 2
+ 9.899988e-01 9.900018e-01
+<GCONST> 3.655654e+00
+<TRANSP> 3
+ 0.000000e+00 1.000000e+00 0.000000e+00
+ 0.000000e+00 0.000000e+00 1.000000e+00
+ 0.000000e+00 0.000000e+00 0.000000e+00
+<ENDHMM>
+<BEGINHMM>
+<NUMSTATES> 3
+<STATE> 2
+<MEAN> 2
+ 8.137809e-02 -4.964205e-03
+<VARIANCE> 2
+ 9.899999e-01 9.899998e-01
+<GCONST> 3.655653e+00
+<TRANSP> 3
+ 0.000000e+00 1.000000e+00 0.000000e+00
+ 0.000000e+00 0.000000e+00 1.000000e+00
+ 0.000000e+00 0.000000e+00 0.000000e+00
+<ENDHMM>
+
+htkmmf_read: result = 
+{'models': [('HMM',
+             attrdict({'decl': 'class1', 'states': [('state', attrdict({'var': array([[ 2.789062,  9.543747]]), 'statenum': 2, 'gconst': 6.9573460000000003, 'mean': array([[-1.565675 ,  0.1103529]])}))], 'transp': array([[ 0.,  1.,  0.],
+       [ 0.,  0.,  1.],
+       [ 0.,  0.,  0.]]), 'numstates': 3})),
+            ('HMM',
+             attrdict({'decl': 'class2', 'states': [('state', attrdict({'var': array([[ 0.9899988,  0.9900018]]), 'statenum': 2, 'gconst': 3.6556540000000002, 'mean': array([[ 3.08272 , -2.936473]])}))], 'transp': array([[ 0.,  1.,  0.],
+       [ 0.,  0.,  1.],
+       [ 0.,  0.,  0.]]), 'numstates': 3})),
+            ('HMM',
+             attrdict({'states': [('state', attrdict({'var': array([[ 0.9899999,  0.9899998]]), 'statenum': 2, 'gconst': 3.655653, 'mean': array([[ 0.08137809, -0.00496421]])}))], 'transp': array([[ 0.,  1.,  0.],
+       [ 0.,  0.,  1.],
+       [ 0.,  0.,  0.]]), 'numstates': 3}))],
+ 'options': {'covar': 'diagc',
+             'duration': 'nulld',
+             'feature_kind': ['USER'],
+             'streaminfo': (1, 2),
+             'vecsize': 2}}
+htkmmf_read: m = 
+attrdict({'decl': 'class1', 'states': [('state', attrdict({'var': array([[ 2.789062,  9.543747]]), 'statenum': 2, 'gconst': 6.9573460000000003, 'mean': array([[-1.565675 ,  0.1103529]])}))], 'transp': array([[ 0.,  1.,  0.],
+       [ 0.,  0.,  1.],
+       [ 0.,  0.,  0.]]), 'numstates': 3})
+htkmmf_read: m.keys() = 
+['decl', 'states', 'transp', 'numstates']
+htkmmf_read: state.keys() = 
+['var', 'statenum', 'gconst', 'mean']
+htkmmf_read: gmm = Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: -1.5657 0.1104    Vars: 2.7891 9.5437
+htkmmf_read: m = 
+attrdict({'decl': 'class2', 'states': [('state', attrdict({'var': array([[ 0.9899988,  0.9900018]]), 'statenum': 2, 'gconst': 3.6556540000000002, 'mean': array([[ 3.08272 , -2.936473]])}))], 'transp': array([[ 0.,  1.,  0.],
+       [ 0.,  0.,  1.],
+       [ 0.,  0.,  0.]]), 'numstates': 3})
+htkmmf_read: m.keys() = 
+['decl', 'states', 'transp', 'numstates']
+htkmmf_read: state.keys() = 
+['var', 'statenum', 'gconst', 'mean']
+htkmmf_read: gmm = Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 3.0827 -2.9365    Vars: 0.9900 0.9900
+htkmmf_read: m = 
+attrdict({'states': [('state', attrdict({'var': array([[ 0.9899999,  0.9899998]]), 'statenum': 2, 'gconst': 3.655653, 'mean': array([[ 0.08137809, -0.00496421]])}))], 'transp': array([[ 0.,  1.,  0.],
+       [ 0.,  0.,  1.],
+       [ 0.,  0.,  0.]]), 'numstates': 3})
+htkmmf_read: m.keys() = 
+['states', 'transp', 'numstates']
+htkmmf_read: state.keys() = 
+['var', 'statenum', 'gconst', 'mean']
+htkmmf_read: gmm = Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0814 -0.0050    Vars: 0.9900 0.9900
+GmmMgr with 3 models of type <class 'onyx.am.gaussian.GaussianMixtureModel'>
+  (dimension 2, covariance_type onyx.am.gaussian.GaussianModelBase.DIAGONAL_COVARIANCE)
+Built model UnnamedModel0 at index 2:
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [2]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0814 -0.0050    Vars: 0.9900 0.9900
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+
+Built model class2 at index 1:
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [1]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 3.0827 -2.9365    Vars: 0.9900 0.9900
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+
+Built model class1 at index 0:
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: -1.5657 0.1104    Vars: 2.7891 9.5437
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+
+
+htkmmf_read: contents = 
+~o
+<STREAMINFO> 1 2
+<VECSIZE> 2<NULLD><USER><DIAGC>
+~h "class1"
+<BEGINHMM>
+<NUMSTATES> 3
+<STATE> 2
+<MEAN> 2
+ -1.565675e+00 1.103529e-01
+<VARIANCE> 2
+ 2.789062e+00 9.543747e+00
+<GCONST> 6.957346e+00
+<TRANSP> 3
+ 0.000000e+00 1.000000e+00 0.000000e+00
+ 0.000000e+00 0.000000e+00 1.000000e+00
+ 0.000000e+00 0.000000e+00 0.000000e+00
+<ENDHMM>
+~h "class2"
+<BEGINHMM>
+<NUMSTATES> 3
+<STATE> 2
+<MEAN> 2
+ 3.082720e+00 -2.936473e+00
+<VARIANCE> 2
+ 9.899988e-01 9.900018e-01
+<GCONST> 3.655654e+00
+<TRANSP> 3
+ 0.000000e+00 1.000000e+00 0.000000e+00
+ 0.000000e+00 0.000000e+00 1.000000e+00
+ 0.000000e+00 0.000000e+00 0.000000e+00
+<ENDHMM>
+~h "class3"
+<BEGINHMM>
+<NUMSTATES> 3
+<STATE> 2
+<MEAN> 2
+ 8.137809e-02 -4.964205e-03
+<VARIANCE> 2
+ 9.899999e-01 9.899998e-01
+<GCONST> 3.655653e+00
+<TRANSP> 3
+ 0.000000e+00 1.000000e+00 0.000000e+00
+ 0.000000e+00 0.000000e+00 1.000000e+00
+ 0.000000e+00 0.000000e+00 0.000000e+00
+<ENDHMM>
+
+htkmmf_read: result = 
+{'models': [('HMM',
+             attrdict({'decl': 'class1', 'states': [('state', attrdict({'var': array([[ 2.789062,  9.543747]]), 'statenum': 2, 'gconst': 6.9573460000000003, 'mean': array([[-1.565675 ,  0.1103529]])}))], 'transp': array([[ 0.,  1.,  0.],
+       [ 0.,  0.,  1.],
+       [ 0.,  0.,  0.]]), 'numstates': 3})),
+            ('HMM',
+             attrdict({'decl': 'class2', 'states': [('state', attrdict({'var': array([[ 0.9899988,  0.9900018]]), 'statenum': 2, 'gconst': 3.6556540000000002, 'mean': array([[ 3.08272 , -2.936473]])}))], 'transp': array([[ 0.,  1.,  0.],
+       [ 0.,  0.,  1.],
+       [ 0.,  0.,  0.]]), 'numstates': 3})),
+            ('HMM',
+             attrdict({'decl': 'class3', 'states': [('state', attrdict({'var': array([[ 0.9899999,  0.9899998]]), 'statenum': 2, 'gconst': 3.655653, 'mean': array([[ 0.08137809, -0.00496421]])}))], 'transp': array([[ 0.,  1.,  0.],
+       [ 0.,  0.,  1.],
+       [ 0.,  0.,  0.]]), 'numstates': 3}))],
+ 'options': {'covar': 'diagc',
+             'duration': 'nulld',
+             'feature_kind': ['USER'],
+             'streaminfo': (1, 2),
+             'vecsize': 2}}
+htkmmf_read: m = 
+attrdict({'decl': 'class1', 'states': [('state', attrdict({'var': array([[ 2.789062,  9.543747]]), 'statenum': 2, 'gconst': 6.9573460000000003, 'mean': array([[-1.565675 ,  0.1103529]])}))], 'transp': array([[ 0.,  1.,  0.],
+       [ 0.,  0.,  1.],
+       [ 0.,  0.,  0.]]), 'numstates': 3})
+htkmmf_read: m.keys() = 
+['decl', 'states', 'transp', 'numstates']
+htkmmf_read: state.keys() = 
+['var', 'statenum', 'gconst', 'mean']
+htkmmf_read: gmm = Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: -1.5657 0.1104    Vars: 2.7891 9.5437
+htkmmf_read: m = 
+attrdict({'decl': 'class2', 'states': [('state', attrdict({'var': array([[ 0.9899988,  0.9900018]]), 'statenum': 2, 'gconst': 3.6556540000000002, 'mean': array([[ 3.08272 , -2.936473]])}))], 'transp': array([[ 0.,  1.,  0.],
+       [ 0.,  0.,  1.],
+       [ 0.,  0.,  0.]]), 'numstates': 3})
+htkmmf_read: m.keys() = 
+['decl', 'states', 'transp', 'numstates']
+htkmmf_read: state.keys() = 
+['var', 'statenum', 'gconst', 'mean']
+htkmmf_read: gmm = Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 3.0827 -2.9365    Vars: 0.9900 0.9900
+htkmmf_read: m = 
+attrdict({'decl': 'class3', 'states': [('state', attrdict({'var': array([[ 0.9899999,  0.9899998]]), 'statenum': 2, 'gconst': 3.655653, 'mean': array([[ 0.08137809, -0.00496421]])}))], 'transp': array([[ 0.,  1.,  0.],
+       [ 0.,  0.,  1.],
+       [ 0.,  0.,  0.]]), 'numstates': 3})
+htkmmf_read: m.keys() = 
+['decl', 'states', 'transp', 'numstates']
+htkmmf_read: state.keys() = 
+['var', 'statenum', 'gconst', 'mean']
+htkmmf_read: gmm = Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0814 -0.0050    Vars: 0.9900 0.9900
+GmmMgr with 3 models of type <class 'onyx.am.gaussian.GaussianMixtureModel'>
+  (dimension 2, covariance_type onyx.am.gaussian.GaussianModelBase.DIAGONAL_COVARIANCE)
+Built model class2 at index 1:
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [1]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 3.0827 -2.9365    Vars: 0.9900 0.9900
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+
+Built model class3 at index 2:
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [2]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0814 -0.0050    Vars: 0.9900 0.9900
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+
+Built model class1 at index 0:
+Hmm: num_states = 1
+  Models (dim = 2):
+  GmmMgr index list: [0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: -1.5657 0.1104    Vars: 2.7891 9.5437
+ Transition probabilities:
+[[ 0.  1.  0.]
+ [ 0.  0.  1.]
+ [ 0.  0.  0.]]
+
+

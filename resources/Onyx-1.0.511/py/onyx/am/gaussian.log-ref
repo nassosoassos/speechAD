@@ -1,0 +1,54 @@
+============== test0 ============
+Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.7500     SGM: (Type = diagonal, Dim = 3)  Means: 1.0000 1.0000 1.0000    Vars: 1.0000 1.0000 1.0000
+ 0.2500     SGM: (Type = diagonal, Dim = 3)  Means: 2.0000 3.0000 4.0000    Vars: 0.5000 0.5000 1.0000
+Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.5000     SGM: (Type = diagonal, Dim = 3)  Means: -0.1839 0.0325 0.6988    Vars: 0.7000 0.7000 0.7000
+ 0.5000     SGM: (Type = diagonal, Dim = 3)  Means: -0.0964 1.4135 -1.5326    Vars: 0.7000 0.7000 0.7000
+Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.2706     SGM: (Type = diagonal, Dim = 3)  Means: 1.8315 2.8226 3.4107    Vars: 0.6054 0.8592 1.7578
+ 0.7294     SGM: (Type = diagonal, Dim = 3)  Means: 0.7421 1.0332 1.0454    Vars: 1.0616 0.8945 0.9134
+
+============== test1 ============
+Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.7500     SGM: (Type = diagonal, Dim = 3)  Means: 1.0000 1.0000 1.0000    Vars: 1.0000 1.0000 1.0000
+ 0.2500     SGM: (Type = diagonal, Dim = 3)  Means: 2.0000 3.0000 4.0000    Vars: 0.5000 0.5000 1.0000
+Gmm: (Type = full, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.5000     SGM: (Type = full, Dim = 3)  Means: -0.1839 0.0325 0.6988    Vars:
+ 0.7000 0.0000 0.0000
+ 0.0000 0.7000 0.0000
+ 0.0000 0.0000 0.7000
+ 0.5000     SGM: (Type = full, Dim = 3)  Means: -0.0964 1.4135 -1.5326    Vars:
+ 0.7000 0.0000 0.0000
+ 0.0000 0.7000 0.0000
+ 0.0000 0.0000 0.7000
+Gmm: (Type = full, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.5593     SGM: (Type = full, Dim = 3)  Means: 1.4956 1.9071 2.4953    Vars:
+ 0.8818 0.4623 0.6011
+ 0.4623 1.8154 1.4445
+ 0.6011 1.4445 2.7199
+ 0.4407     SGM: (Type = full, Dim = 3)  Means: 0.7958 1.0503 0.8262    Vars:
+ 1.0793 -0.0699 -0.0898
+ -0.0699 0.8901 -0.1194
+ -0.0898 -0.1194 0.6880
+
+============== test2 ============
+Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.7500     SGM: (Type = diagonal, Dim = 3)  Means: 1.0000 1.0000 1.0000    Vars: 1.0000 1.0000 1.0000
+ 0.2500     SGM: (Type = diagonal, Dim = 3)  Means: 2.0000 3.0000 4.0000    Vars: 0.5000 0.5000 1.0000
+Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.5000     SGM: (Type = diagonal, Dim = 3)  Means: -0.1839 0.0325 0.6988    Vars: 0.7000 0.7000 0.7000
+ 0.5000     SGM: (Type = diagonal, Dim = 3)  Means: -0.0964 1.4135 -1.5326    Vars: 0.7000 0.7000 0.7000
+Gmm: (Type = diagonal, Dim = 3, NumComps = 2)
+Weights   Models
+ 0.8839     SGM: (Type = diagonal, Dim = 3)  Means: 1.2881 1.5008 1.7953    Vars: 1.0329 1.7167 2.6108
+ 0.1161     SGM: (Type = diagonal, Dim = 3)  Means: -0.0963 1.4131 -1.5301    Vars: 0.6994 0.6997 0.6990
+

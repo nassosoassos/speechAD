@@ -1,0 +1,51 @@
+###########################################################################
+#
+# File:         SConscript (directory: py/onyx/signalprocessing)
+# Date:         5-Oct-2007
+# Author:       Hugh Secker-Walker
+# Description:  Build and test signalprocessing elements
+#
+# This file is part of Onyx   http://onyxtools.sourceforge.net
+#
+# Copyright 2007 - 2009 The Johns Hopkins University
+#
+# Licensed under the Apache License, Version 2.0 (the "License").
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.  See the License for the specific language governing
+# permissions and limitations under the License.
+#
+###########################################################################
+
+
+Import('env')
+env.DocBuildThisPackage('Signal Processing')
+env.PyFile('__init__.py')
+env.PyFile('cepstrum.py')
+env.PyFile('delta.py')
+env.PyFile('endpoint.py')
+env.PyFile('filter.py')
+env.PyFile('htkmfcc.py')
+env.PyFile('processor.py')
+env.PyFile('scale.py')
+env.PyFile('spectrum.py')
+env.PyFile('vocalsource.py')
+env.PyFile('window.py')
+
+channel = env.PyFile('channel.py')
+# doctests in channel.py use objectset (which circumvents our scanner's
+# dependency tracking), so we have to provide explicit dependencies
+env.PyModuleDepends(channel, ('py/onyx/signalprocessing/spectrum.py', 'py/onyx/signalprocessing/window.py'))
+env.PyPackageDepends(channel, 'onyx.signalprocessing')
+
+
+# Other files in this directory that should appear in the build directory
+env.Local('htkmfcc-parameters.txt',
+          )
+
+

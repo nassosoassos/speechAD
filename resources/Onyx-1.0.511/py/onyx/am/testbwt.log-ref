@@ -1,0 +1,550 @@
+================================  TEST 0  ===========================
+
+
+========= TG CONVERTED TO Hmm =========
+
+Hmm: num_states = 0
+
+========= CONVERTED THEN ADAPTED AS Hmm =========
+
+Hmm: num_states = 0
+
+========= ADAPTED AS TG THEN CONVERTED =========
+
+Hmm: num_states = 0
+ model1str == model2str is: True
+ result_hmm == result_hmm2 is: True
+================================  TEST 1  ===========================
+
+
+========= TG CONVERTED TO Hmm =========
+
+Hmm: num_states = 4
+  Models (dim = 2):
+  GmmMgr index list: [8, 7, 4, 2]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+ Transition probabilities:
+[[ 0.    1.    0.    0.    0.    0.  ]
+ [ 0.    0.25  0.75  0.    0.    0.  ]
+ [ 0.    0.    0.25  0.75  0.    0.  ]
+ [ 0.    0.    0.    0.25  0.75  0.  ]
+ [ 0.    0.    0.    0.    0.25  0.75]
+ [ 0.    0.    0.    0.    0.    0.  ]]
+
+========= CONVERTED THEN ADAPTED AS Hmm =========
+
+Hmm: num_states = 4
+  Models (dim = 2):
+  GmmMgr index list: [8, 7, 4, 2]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.5547 1.5493    Vars: 0.3883 0.3446
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.1469 2.0731    Vars: 0.4017 0.3798
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.6109 2.5413    Vars: 0.4799 0.4648
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.9393 2.9901    Vars: 0.2964 0.3760
+ Transition probabilities:
+[[ 0.          1.          0.          0.          0.          0.        ]
+ [ 0.          0.71428571  0.28571429  0.          0.          0.        ]
+ [ 0.          0.          0.71428571  0.28571429  0.          0.        ]
+ [ 0.          0.          0.          0.71428571  0.28571429  0.        ]
+ [ 0.          0.          0.          0.          0.71428571  0.28571429]
+ [ 0.          0.          0.          0.          0.          0.        ]]
+
+========= ADAPTED AS TG THEN CONVERTED =========
+
+Hmm: num_states = 4
+  Models (dim = 2):
+  GmmMgr index list: [8, 7, 4, 2]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.5547 1.5493    Vars: 0.3883 0.3446
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.1469 2.0731    Vars: 0.4017 0.3798
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.6109 2.5413    Vars: 0.4799 0.4648
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.9393 2.9901    Vars: 0.2964 0.3760
+ Transition probabilities:
+[[ 0.          1.          0.          0.          0.          0.        ]
+ [ 0.          0.71428571  0.28571429  0.          0.          0.        ]
+ [ 0.          0.          0.71428571  0.28571429  0.          0.        ]
+ [ 0.          0.          0.          0.71428571  0.28571429  0.        ]
+ [ 0.          0.          0.          0.          0.71428571  0.28571429]
+ [ 0.          0.          0.          0.          0.          0.        ]]
+ model1str == model2str is: True
+ result_hmm == result_hmm2 is: True
+================================  TEST 2  ===========================
+
+
+========= TG CONVERTED TO Hmm =========
+
+Hmm: num_states = 8
+  Models (dim = 2):
+  GmmMgr index list: [8, 7, 4, 2, 5, 4, 7, 3]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+ Transition probabilities:
+[[ 0.    1.    0.    0.    0.    0.    0.    0.    0.    0.  ]
+ [ 0.    0.25  0.75  0.    0.    0.    0.    0.    0.    0.  ]
+ [ 0.    0.    0.25  0.75  0.    0.    0.    0.    0.    0.  ]
+ [ 0.    0.    0.    0.25  0.75  0.    0.    0.    0.    0.  ]
+ [ 0.    0.    0.    0.    0.25  0.75  0.    0.    0.    0.  ]
+ [ 0.    0.    0.    0.    0.    0.25  0.75  0.    0.    0.  ]
+ [ 0.    0.    0.    0.    0.    0.    0.25  0.75  0.    0.  ]
+ [ 0.    0.    0.    0.    0.    0.    0.    0.25  0.75  0.  ]
+ [ 0.    0.    0.    0.    0.    0.    0.    0.    0.25  0.75]
+ [ 0.    0.    0.    0.    0.    0.    0.    0.    0.    0.  ]]
+
+========= CONVERTED THEN ADAPTED AS Hmm =========
+
+Hmm: num_states = 8
+  Models (dim = 2):
+  GmmMgr index list: [8, 7, 4, 2, 5, 4, 7, 3]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.2076 1.2561    Vars: 0.2025 0.2158
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3761 2.3311    Vars: 0.7274 0.7067
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.4496 2.3507    Vars: 0.4447 0.4228
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.1646 2.0725    Vars: 0.2986 0.2945
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.4781 2.4455    Vars: 0.4770 0.4427
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.4496 2.3507    Vars: 0.4447 0.4228
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3761 2.3311    Vars: 0.7274 0.7067
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 3.0017 3.1700    Vars: 0.1865 0.2907
+ Transition probabilities:
+[[ 0.          1.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.42857143  0.57142857  0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.42857143  0.57142857  0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.42857143  0.57142857  0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.42857143  0.57142857  0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.42857143  0.57142857  0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.42857143  0.57142857  0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.42857143  0.57142857  0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.42857143  0.57142857]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]]
+
+========= ADAPTED AS TG THEN CONVERTED =========
+
+Hmm: num_states = 8
+  Models (dim = 2):
+  GmmMgr index list: [8, 7, 4, 2, 5, 4, 7, 3]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.2076 1.2561    Vars: 0.2025 0.2158
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3761 2.3311    Vars: 0.7274 0.7067
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.4496 2.3507    Vars: 0.4447 0.4228
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.1646 2.0725    Vars: 0.2986 0.2945
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.4781 2.4455    Vars: 0.4770 0.4427
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.4496 2.3507    Vars: 0.4447 0.4228
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3761 2.3311    Vars: 0.7274 0.7067
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 3.0017 3.1700    Vars: 0.1865 0.2907
+ Transition probabilities:
+[[ 0.          1.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.42857143  0.57142857  0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.42857143  0.57142857  0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.42857143  0.57142857  0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.42857143  0.57142857  0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.42857143  0.57142857  0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.42857143  0.57142857  0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.42857143  0.57142857  0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.42857143  0.57142857]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]]
+ model1str == model2str is: True
+ result_hmm == result_hmm2 is: False
+================================  TEST 3  ===========================
+
+
+========= TG CONVERTED TO Hmm =========
+
+Hmm: num_states = 18
+  Models (dim = 2):
+  GmmMgr index list: [8, 7, 4, 2, 5, 4, 7, 3, 4, 5, 9, 5, 2, 7, 6, 2, 9, 9]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+ Transition probabilities:
+[[ 0.      0.      0.      1.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.    ]
+ [ 0.      0.      0.      1.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.    ]
+ [ 0.      0.      0.      0.      1.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.    ]
+ [ 0.      0.      0.      0.25    0.625   0.125   0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.    ]
+ [ 0.      0.      0.      0.      0.25    0.625   0.125   0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.    ]
+ [ 0.      0.      0.      0.      0.      0.25    0.625   0.05    0.      0.      0.      0.      0.      0.075   0.      0.      0.      0.      0.      0.      0.      0.      0.      0.    ]
+ [ 0.      0.      0.      0.      0.      0.      0.25    0.1875  0.1     0.      0.      0.      0.      0.4375  0.025   0.      0.      0.      0.      0.      0.      0.      0.      0.    ]
+ [ 0.      0.      0.      0.      0.      0.      0.      0.25    0.625   0.125   0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.    ]
+ [ 0.      0.      0.      0.      0.      0.      0.      0.      0.25    0.625   0.125   0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.    ]
+ [ 0.      0.      0.      0.      0.      0.      0.      0.      0.      0.25    0.625   0.125   0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.    ]
+ [ 0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.25    0.625   0.125   0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.    ]
+ [ 0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.25    0.625   0.      0.      0.      0.      0.125   0.      0.      0.      0.      0.      0.    ]
+ [ 0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.25    0.      0.      0.      0.      0.625   0.125   0.      0.      0.      0.      0.    ]
+ [ 0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.25    0.625   0.125   0.      0.      0.      0.      0.      0.      0.      0.    ]
+ [ 0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.25    0.625   0.125   0.      0.      0.      0.      0.      0.      0.    ]
+ [ 0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.25    0.625   0.125   0.      0.      0.      0.      0.      0.    ]
+ [ 0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.25    0.625   0.125   0.      0.      0.      0.      0.    ]
+ [ 0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.25    0.625   0.125   0.      0.      0.      0.    ]
+ [ 0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.25    0.625   0.125   0.      0.      0.    ]
+ [ 0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.25    0.625   0.125   0.      0.    ]
+ [ 0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.25    0.      0.625   0.125 ]
+ [ 0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.    ]
+ [ 0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.    ]
+ [ 0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.      0.    ]]
+
+========= CONVERTED THEN ADAPTED AS Hmm =========
+
+Hmm: num_states = 18
+  Models (dim = 2):
+  GmmMgr index list: [8, 7, 4, 2, 5, 4, 7, 3, 4, 5, 9, 5, 2, 7, 6, 2, 9, 9]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.0867 1.1468    Vars: 0.0955 0.1219
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.8890 1.8900    Vars: 0.7248 0.6743
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.0109 1.9737    Vars: 0.4399 0.4087
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.5016 2.4015    Vars: 0.4955 0.4697
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3147 2.2310    Vars: 0.3907 0.3903
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.0109 1.9737    Vars: 0.4399 0.4087
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.8890 1.8900    Vars: 0.7248 0.6743
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3057 2.2806    Vars: 0.4242 0.3880
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.0109 1.9737    Vars: 0.4399 0.4087
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3147 2.2310    Vars: 0.3907 0.3903
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.7624 2.8293    Vars: 0.3646 0.5540
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3147 2.2310    Vars: 0.3907 0.3903
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.5016 2.4015    Vars: 0.4955 0.4697
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.8890 1.8900    Vars: 0.7248 0.6743
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.9090 2.8162    Vars: 0.3464 0.3186
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.5016 2.4015    Vars: 0.4955 0.4697
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.7624 2.8293    Vars: 0.3646 0.5540
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.7624 2.8293    Vars: 0.3646 0.5540
+ Transition probabilities:
+[[ 0.          0.          0.          1.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          1.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          1.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.22141233  0.65115629  0.12743138  0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.23181643  0.64696907  0.1212145   0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.2291657   0.65065441  0.05462847  0.          0.          0.          0.          0.          0.06555142  0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.23022008  0.16784304  0.10882678  0.          0.          0.          0.          0.47141559  0.02169451  0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.17919755  0.6614683   0.15933416  0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.18566147  0.66061365  0.15372488  0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.18316899  0.66122716  0.15560385  0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.18384782  0.66099883  0.15515334  0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.18371645  0.66105748  0.          0.          0.          0.          0.15522608  0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.18373728  0.          0.          0.          0.          0.66101466  0.15524806  0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.25721294  0.6394231   0.10336396  0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.25250894  0.64177936  0.1057117   0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.25383345  0.64104422  0.10512233  0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.25361299  0.64116663  0.10522037  0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.22973519  0.64808848  0.12217632  0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.22973918  0.64718669  0.12307413  0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.22979344  0.65125218  0.11895438  0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.22897433  0.          0.64252139  0.12850428]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]]
+
+========= ADAPTED AS TG THEN CONVERTED =========
+
+Hmm: num_states = 18
+  Models (dim = 2):
+  GmmMgr index list: [8, 7, 4, 2, 5, 4, 7, 3, 4, 5, 9, 5, 2, 7, 6, 2, 9, 9]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.0867 1.1468    Vars: 0.0955 0.1219
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.8890 1.8900    Vars: 0.7248 0.6743
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.0109 1.9737    Vars: 0.4399 0.4087
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.5016 2.4015    Vars: 0.4955 0.4697
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3147 2.2310    Vars: 0.3907 0.3903
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.0109 1.9737    Vars: 0.4399 0.4087
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.8890 1.8900    Vars: 0.7248 0.6743
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3057 2.2806    Vars: 0.4242 0.3880
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.0109 1.9737    Vars: 0.4399 0.4087
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3147 2.2310    Vars: 0.3907 0.3903
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.7624 2.8293    Vars: 0.3646 0.5540
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.3147 2.2310    Vars: 0.3907 0.3903
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.5016 2.4015    Vars: 0.4955 0.4697
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.8890 1.8900    Vars: 0.7248 0.6743
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.9090 2.8162    Vars: 0.3464 0.3186
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.5016 2.4015    Vars: 0.4955 0.4697
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.7624 2.8293    Vars: 0.3646 0.5540
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.7624 2.8293    Vars: 0.3646 0.5540
+ Transition probabilities:
+[[ 0.          0.          0.          1.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          1.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          1.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.22141233  0.65115629  0.12743138  0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.23181643  0.64696907  0.1212145   0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.2291657   0.65065441  0.05462847  0.          0.          0.          0.          0.          0.06555142  0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.23022008  0.16784304  0.10882678  0.          0.          0.          0.          0.47141559  0.02169451  0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.17919755  0.6614683   0.15933416  0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.18566147  0.66061365  0.15372488  0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.18316899  0.66122716  0.15560385  0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.18384782  0.66099883  0.15515334  0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.18371645  0.66105748  0.          0.          0.          0.          0.15522608  0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.18373728  0.          0.          0.          0.          0.66101466  0.15524806  0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.25721294  0.6394231   0.10336396  0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.25250894  0.64177936  0.1057117   0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.25383345  0.64104422  0.10512233  0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.25361299  0.64116663  0.10522037  0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.22973519  0.64808848  0.12217632  0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.22973918  0.64718669  0.12307413  0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.22979344  0.65125218  0.11895438  0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.22897433  0.          0.64252139  0.12850428]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.          0.        ]]
+ model1str == model2str is: True
+ result_hmm == result_hmm2 is: False
+================================  TEST 4  ===========================
+TrainingGraph with 4 nodes:
+================================  TEST 5  ===========================
+
+
+========= TG CONVERTED TO Hmm =========
+
+Hmm: num_states = 3
+  Models (dim = 2):
+  GmmMgr index list: [8, 7, 0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 0.0000 0.0000    Vars: 1.0000 1.0000
+ Transition probabilities:
+[[ 0.     1.     0.     0.     0.   ]
+ [ 0.     0.25   0.75   0.     0.   ]
+ [ 0.     0.     0.25   0.375  0.375]
+ [ 0.     0.     0.     0.5    0.5  ]
+ [ 0.     0.     0.     0.     0.   ]]
+
+========= CONVERTED THEN ADAPTED AS Hmm =========
+
+Hmm: num_states = 3
+  Models (dim = 2):
+  GmmMgr index list: [8, 7, 0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.2948 1.3294    Vars: 0.2704 0.2623
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.8256 1.7859    Vars: 0.3732 0.3413
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.6129 2.5797    Vars: 0.4544 0.5103
+ Transition probabilities:
+[[  0.00000000e+00   1.00000000e+00   0.00000000e+00   0.00000000e+00   0.00000000e+00]
+ [  0.00000000e+00   4.98606304e-01   5.01393696e-01   0.00000000e+00   0.00000000e+00]
+ [  0.00000000e+00   0.00000000e+00   4.98606304e-01   5.00995497e-01   3.98198916e-04]
+ [  0.00000000e+00   0.00000000e+00   0.00000000e+00   9.00190393e-01   9.98096075e-02]
+ [  0.00000000e+00   0.00000000e+00   0.00000000e+00   0.00000000e+00   0.00000000e+00]]
+
+========= ADAPTED AS TG THEN CONVERTED =========
+
+Hmm: num_states = 3
+  Models (dim = 2):
+  GmmMgr index list: [8, 7, 0]
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.2930 1.3278    Vars: 0.2685 0.2607
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 1.8231 1.7834    Vars: 0.3709 0.3385
+Gmm: (Type = diagonal, Dim = 2, NumComps = 1)
+Weights   Models
+ 1.0000     SGM: (Type = diagonal, Dim = 2)  Means: 2.6129 2.5797    Vars: 0.4544 0.5103
+ Transition probabilities:
+[[ 0.          1.          0.          0.          0.        ]
+ [ 0.          0.49760413  0.50239587  0.          0.        ]
+ [ 0.          0.          0.49760413  0.25119794  0.25119794]
+ [ 0.          0.          0.          0.90019039  0.09980961]
+ [ 0.          0.          0.          0.          0.        ]]
+ model1str == model2str is: False
+ result_hmm == result_hmm2 is: False

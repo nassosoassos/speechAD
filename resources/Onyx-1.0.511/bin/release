@@ -1,0 +1,104 @@
+#!/bin/bash -u
+###########################################################################
+#
+# File:         release
+# Date:         17-Aug-2009
+# Author:       Ken Basye
+# Description:  Shell script for making a release
+#
+# This file is part of Onyx   http://onyxtools.sourceforge.net
+#
+# Copyright 2009 The Johns Hopkins University
+#
+# Licensed under the Apache License, Version 2.0 (the "License").
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.  See the License for the specific language governing
+# permissions and limitations under the License.
+#
+###########################################################################
+
+# Run this from a top-level directory after a successful build.  Make sure your
+# PYTHONPATH is still set to the same location you just built from.
+
+platform=`python -m oproject`
+
+version=`python -V 2>&1`
+python_version=${version#* }
+
+release_name=$1
+
+echo 'Building release: ' $release_name
+echo 'from directory build/' $platform
+
+# This will give us some primitive error checking
+cd build/$platform
+
+echo "Building test results tar file..."
+find . -xdev -type f \( -name "*.log-*test*" -or -name "*.log-diff" -or -name "*.log-trial" \) -print0 | xargs -0 tar czf test_results_${platform}_python_$python_version.tgz
+echo "...done"
+
+echo "Building documentation tar file..."
+ln -s ./doc/sphinx/_build/html ${release_name}_htmldoc
+# The 'h' here makes tar read through the symlink
+tar hczf ${release_name}_htmldoc.tgz ${release_name}_htmldoc
+rm -r ${release_name}_htmldoc
+echo "...done"
+
+echo "Building release tar file..."
+cd ..
+# We need to exclude a lot of things from the release tarball, so we put them in
+# a file and use tar's -X option
+
+# This is left over from the build.
+echo ${release_name}/.sconsign.dblite >> exclude.txt
+
+# Warts left by MacOS
+echo ${release_name}/\*/\*.DS_Store >> exclude.txt
+
+# We don't need any of the built doc, nor the generated .rst files in the release
+echo ${release_name}/htmldoc >> exclude.txt
+echo ${release_name}/htmldoc.html >> exclude.txt
+echo ${release_name}/doc/sphinx/_build >> exclude.txt
+echo ${release_name}/doc/sphinx/\*_pkg.rst >> exclude.txt
+echo ${release_name}/doc/sphinx/\*_mod.rst >> exclude.txt
+echo ${release_name}/doc/sphinx/\*_cat.rst >> exclude.txt
+
+# We don't want platform-specific binaries
+echo ${release_name}/bin/$platform >> exclude.txt
+
+# Lots of platform-specific stuff in the cpp directory
+echo ${release_name}/cpp/pylib/${platform} >> exclude.txt
+echo ${release_name}/cpp/\*/\*.o >> exclude.txt
+echo ${release_name}/cpp/\*/\*.os >> exclude.txt
+echo ${release_name}/cpp/\*/\*.so >> exclude.txt
+echo ${release_name}/cpp/\*/\*.a >> exclude.txt
+echo ${release_name}/cpp/floatutils/testfloatutils >> exclude.txt
+echo ${release_name}/cpp/sph2pipe/sph2pipe >> exclude.txt
+echo ${release_name}/cpp/liveaudio/main >> exclude.txt
+echo ${release_name}/cpp/syck/test_basic >> exclude.txt
+echo ${release_name}/cpp/syck/test_emit >> exclude.txt
+echo ${release_name}/cpp/syck/test_parse >> exclude.txt
+echo ${release_name}/cpp/syck/test_YTS >> exclude.txt
+
+#Pyc and pyo files are Python-version specific
+echo ${release_name}/\*/\*.py[co] >> exclude.txt
+
+# Test files are already collected in a subsidiary tar file above
+echo ${release_name}/\*/\*.log-diff >> exclude.txt
+echo ${release_name}/\*/\*.log-trial >> exclude.txt
+echo ${release_name}/\*/\*.log-\*test\* >> exclude.txt
+
+
+mv $platform $release_name
+tar cz -X exclude.txt -f ../${release_name}.tgz $release_name
+mv $release_name $platform 
+rm exclude.txt
+echo "...done"
+
+cd ..
