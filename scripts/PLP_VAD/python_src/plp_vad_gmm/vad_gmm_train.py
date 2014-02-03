@@ -13,7 +13,7 @@ from classifiers import train_gmm_classifier
 def vad_gmm_train(audio_list, annotations_dir, model_list, feature_type,
                           n_coeffs_per_frame, acc_frames, working_dir, apply_hlda=False,
                           hlda_nuisance_dims=0, n_gmm_comps=None, acc_frame_shift=1,
-                          n_train_iterations=10, samp_period=0.01, segment_boundaries=[1/3.0, 2/3.0]):
+                          n_train_iterations=10, samp_period=0.01, win_length=0.025, segment_boundaries=[1/3.0, 2/3.0]):
     logging.info('Number of gmm components: '+str(n_gmm_comps))
 
     features_dir = os.path.join(working_dir,feature_type)
@@ -23,8 +23,8 @@ def vad_gmm_train(audio_list, annotations_dir, model_list, feature_type,
         os.makedirs(features_dir)
 
     # Feature extraction
-    vef.fea_extract(audio_list,feature_type,n_coeffs_per_frame,features_dir, samp_period)
-    vef.create_corresponding_list_assert(audio_list,features_dir,fea_file_list,'fea')
+    vef.fea_extract(audio_list, feature_type, n_coeffs_per_frame, features_dir, samp_period, win_length)
+    vef.create_corresponding_list_assert(audio_list, features_dir, fea_file_list, 'fea')
     if not os.path.exists(acc_features_dir):
         os.makedirs(acc_features_dir)
     vef.accumulate_feature_vectors_parallel(fea_file_list, acc_frames,

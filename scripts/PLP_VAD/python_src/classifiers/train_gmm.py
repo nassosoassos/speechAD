@@ -54,7 +54,7 @@ def increase_n_components(n_mixes, model_name, model_file, training_list, lab_di
               training_list=training_list,
               lab_dir=lab_dir,
               out_model_dir=target_model_dir,
-              n_train_iterations=20,
+              n_train_iterations=30,
               min_var_macro=min_var_macro_file)
 
 def prepare_vfloor_macros_file(model_file, vfloors_file):

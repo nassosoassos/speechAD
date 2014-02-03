@@ -10,8 +10,15 @@ function [htk_model_def, htk_model_macros] = gmm_matlab2htk(gmm)
 % Nassos Katsamanis, SAIL, 2010
 % URL: http://sipi.usc.edu/~nkatsam
 
+covar_string = '';
+switch gmm.covar_type
+    case {'spherical','diag'}
+        covar_string = 'DIAGC';
+    case 'full'
+        covar_string = 'FULLC';
+end
 
-htk_model_macros = sprintf('~o <VecSize> %d <NULLD><%s>\n', gmm.nin, gmm.vector_type);
+htk_model_macros = sprintf('~o <VecSize> %d <NULLD><%s><%s>\n', gmm.nin, gmm.vector_type, covar_string);
 htk_model_def = sprintf('~h "%s"\n', gmm.name);
 htk_model_def = sprintf('%s<BeginHMM>\n', htk_model_def);
 htk_model_def = sprintf('%s\t<NumStates> %d\n', htk_model_def, 3);

@@ -136,7 +136,7 @@ def create_corresponding_list_assert(in_file_list,out_dir,out_file_list,out_sfx)
     out_list.close()
 
 
-def fea_extract(file_list,fea_type,n_coefs,output_dir,samp_period=0.01):
+def fea_extract(file_list,fea_type,n_coefs,output_dir,samp_period=0.01,win_length=0.025):
     '''
     Extract PLP features using HTK.
     It runs on multiple cores if there are multiple available
@@ -146,7 +146,7 @@ def fea_extract(file_list,fea_type,n_coefs,output_dir,samp_period=0.01):
     HTK_config = {}
     HTK_config['TARGETKIND'] = fea_type
     HTK_config['TARGETRATE'] = int(1e7*samp_period)
-    HTK_config['WINDOWSIZE'] = 250000
+    HTK_config['WINDOWSIZE'] = int(1e7*win_length)
     HTK_config['USEHAMMING'] = 'T'
     HTK_config['PREEMCOEF'] = 0.97
     HTK_config['NUMCHANS'] = 24

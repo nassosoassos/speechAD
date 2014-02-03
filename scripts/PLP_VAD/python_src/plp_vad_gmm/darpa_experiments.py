@@ -13,6 +13,7 @@ import os
 import re
 import string
 import subprocess
+import numpy as np
 
 from my_utils import lists, which 
 from plp_vad_gmm import vad_gmm_train, vad_gmm, vad_gmm_evaluate, vad_hmm_train
@@ -164,9 +165,10 @@ def create_corresponding_annotations_list_assert(in_audio_list, annotations_dir,
     in_list.close()
     out_list.close()
 
-def test(in_audio_list=None, audio_dir=None, ldc_annotations_list=None, lab_dir=None, results_dir=None, model_list=None, 
+
+def test(in_audio_list=None, audio_dir=None, ldc_annotations_list=None, lab_dir=None, results_dir=None, model_list=None,
          model_file=None, feature_type='PLP_0', n_coeffs_per_frame=13, acc_frames=31, 
-         samp_period=0.01, window_length=0.02, eval_script=None): 
+         samp_period=0.01, window_length=0.025, eval_script=None):
     '''
     Test Speech Activity Detection for a list of files given a specific model. Ideally, many 
     of the input arguments like samp_period, window_length, n_coeffs_per_frame, acc_frames
@@ -190,16 +192,17 @@ def test(in_audio_list=None, audio_dir=None, ldc_annotations_list=None, lab_dir=
     Output:
     conf_matrix : return the confusion matrix
     '''
+
     if not os.path.exists(results_dir):
         os.makedirs(results_dir)
     
     # Run the VAD to get the results
-    vad_gmm.vad_gmm_list(in_audio_list, model_list, model_file, feature_type, 
-            n_coeffs_per_frame, acc_frames, results_dir, results_dir)
+    vad_gmm.vad_gmm_list(in_audio_list, model_list, model_file, feature_type,
+                         n_coeffs_per_frame, acc_frames, results_dir, results_dir, samp_period, window_length)
     
     # The annotations are in .lab format, i.e., start_time end_time label per line
-    ref_annotations_list = os.path.join(results_dir,'ref_test_annotations.list')
-    hyp_annotations_list = os.path.join(results_dir,'hyp_test_annotations.list')
+    ref_annotations_list = os.path.join(results_dir, 'ref_test_annotations.list')
+    hyp_annotations_list = os.path.join(results_dir, 'hyp_test_annotations.list')
     lists.create_corresponding_list_assert(in_audio_list, lab_dir, ref_annotations_list,'lab')
     lists.create_corresponding_list_assert(in_audio_list, results_dir, hyp_annotations_list,'rec')
     
@@ -208,8 +211,14 @@ def test(in_audio_list=None, audio_dir=None, ldc_annotations_list=None, lab_dir=
                                                            samp_period, model_list)
     msg = "{} \n {}".format(model_file, conf_matrix)
     logging.info(msg)
-    
-    if eval_script != None and os.path.exists(eval_script):
+
+    # Estimate accuracy
+    n_instances = np.sum(conf_matrix)
+    n_correct = np.sum(conf_matrix.diagonal())
+    msg = "Accuracy: {} / {} = {}".format(n_correct, n_instances, float(n_correct) / n_instances )
+    logging.info(msg)
+
+    if eval_script is not None and os.path.exists(eval_script):
         lists.create_corresponding_list_assert(in_audio_list, lab_dir, ref_annotations_list,'lab.frames.txt')
         lists.create_corresponding_list_assert(in_audio_list, results_dir, hyp_annotations_list,'rec.frames.txt')
         vad_evaluate_darpa(testing_list=in_audio_list, ref_annotations_list=ldc_annotations_list, 
@@ -218,6 +227,7 @@ def test(in_audio_list=None, audio_dir=None, ldc_annotations_list=None, lab_dir=
                            results_dir=results_dir, task_id='{}_{}_{}'.format(feature_type, str(n_coeffs_per_frame), 
                                                                               str(acc_frames)))
     return(conf_matrix)
+
 
 def darpa_convert_labels_to_ids_file(filename, class_ids):
     label_file = open(filename,'r')
@@ -233,6 +243,7 @@ def darpa_convert_labels_to_ids_file(filename, class_ids):
             label_file.write('{} {}\n'.format(ln_info[0], ln_info[1]))
 
     label_file.close()
+
 
 def darpa_convert_labels_to_ids_file_list(file_list):
     class_ids = {}
@@ -310,6 +321,7 @@ if __name__ == '__main__':
                 "n_train_iterations" : 10,
                 "acc_frame_shift" : 1,
                 "sampling_period" : 0.01,
+                "window_length" : 0.025,
                 "apply_hlda" : 'off',
                 "hlda_nuisance_dims" : 358, 
                 "n_gmm_components" : 4, 
@@ -335,6 +347,7 @@ if __name__ == '__main__':
     parser.add_argument('--acc_frames', type=int, help="number of frames to accumulate over")
     parser.add_argument('--acc_frame_shift', type=int, help="period of frame accumulation in frames")
     parser.add_argument('--sampling_period', type=float, help="frame sampling period in seconds")
+    parser.add_argument('--window_length', type=float, help="frame length in seconds")
     parser.add_argument('--apply_hlda', help="flag to determine whether to apply HLDA or not")
     parser.add_argument('--models',nargs='+',help="names of the classes for which the classifier is built")
     parser.add_argument('--label_map', help="two-column file with the mapping of labels to model names, dictionary")
@@ -378,6 +391,7 @@ if __name__ == '__main__':
     acc_frames = args.acc_frames
     samp_period = args.sampling_period
     darpa_evaluation_script = args.evaluation_script
+    win_length = args.window_length
     if args.apply_hlda=='on':
         apply_hlda = True
     else:
@@ -461,7 +475,9 @@ if __name__ == '__main__':
                                                   acc_frames=acc_frames, acc_frame_shift=acc_frame_shift, 
                                                   working_dir=working_dir, apply_hlda=apply_hlda, 
                                                   hlda_nuisance_dims=hlda_nuisance_dims, 
-                                                  n_gmm_comps=n_gmm_components, 
+                                                  n_gmm_comps=n_gmm_components,
+                                                  samp_period=samp_period,
+                                                  win_length=win_length,
                                                   n_train_iterations = n_train_iterations)
     else:
         model_files = vad_hmm_train.vad_hmm_train(audio_list=training_audio_list, 
@@ -474,17 +490,19 @@ if __name__ == '__main__':
                                                   working_dir=working_dir, apply_hlda=apply_hlda, 
                                                   hlda_nuisance_dims=hlda_nuisance_dims, 
                                                   n_gmm_comps=n_gmm_components, 
-                                                  n_train_iterations = n_train_iterations)
+                                                  samp_period=samp_period,
+                                                  win_length=win_length,
+                                                  n_train_iterations=n_train_iterations)
 
 
     results_dir = os.path.join(working_dir,'results')
     for m in model_files:
-        m_result_dir = os.path.join(results_dir,os.path.split(m)[1])
+        m_result_dir = os.path.join(results_dir, os.path.split(m)[1])
         conf_matrix = test(in_audio_list=testing_audio_list, audio_dir=audio_dir, 
                            lab_dir=lab_annotations_dir, results_dir=m_result_dir, 
                            model_list=model_list, model_file=m,
                            feature_type=feature_type, n_coeffs_per_frame=n_coeffs_per_frame, 
-                           acc_frames=acc_frames, samp_period=samp_period, 
+                           acc_frames=acc_frames, samp_period=samp_period, window_length=win_length,
                            eval_script=darpa_evaluation_script, 
                            ldc_annotations_list=test_ldc_annotations_list) 
 
