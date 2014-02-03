@@ -14,7 +14,7 @@ def timestamps_to_frames(frame_period,in_file,out_file):
     Change the resolution of the annotation from segments
     to frames
     '''
-    print in_file
+    #print in_file
     in_fid = open(in_file,'r')
     out_fid = open(out_file,'w')
 
@@ -62,8 +62,8 @@ def evaluate_results_file(ref_file,hyp_file,samp_period,labels):
     frames_hyp_file = hyp_file+'.frames.txt'
 
     samp_period *= 1e7
-    timestamps_to_frames(samp_period,ref_file,frames_ref_file)
-    timestamps_to_frames(samp_period,hyp_file,frames_hyp_file)
+    timestamps_to_frames(samp_period, ref_file, frames_ref_file)
+    timestamps_to_frames(samp_period, hyp_file, frames_hyp_file)
 
     r_file = open(frames_ref_file,'r')
     hyp_file = open(frames_hyp_file,'r')
@@ -122,10 +122,8 @@ def evaluate_results_list(ref_file_list, hyp_file_list, samp_period, labels, mod
         elif mode=='single':
             ref = open(r_file,'r')
             hyp = open(h_file,'r')
-            ref_label = ref.readline()
-            hyp_label = hyp.readline()
-            ref_label = ref_label.rstrip('\r\n')
-            ref_label = hyp_label.rstrip('\r\n')
+            ref_label = ref.readline().rstrip('\r\n')
+            hyp_label = hyp.readline().rstrip('\r\n')
 
             ref_info = re.split(r'\s+',ref_label)
             # Check if start and end times are also given

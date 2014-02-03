@@ -51,7 +51,7 @@ def herest(args):
     #    herest_parallel(scp_file, argums)
     #else:
     #    # Run in normal mode
-    print args
+    #print args
     herest_serial(args)
 
 

@@ -247,7 +247,7 @@ def hcopy(scp_file,config_file):
     '''
     cmd=['/usr/local/bin/HCopy','-T','1','-S',scp_file,'-C',config_file]
     out_string = subprocess.check_call(cmd)
-    print out_string
+    #print out_string
 
 def herest_thread(model_dir, data_list, label_dir, model_list, proc_id):
     '''

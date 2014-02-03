@@ -107,6 +107,7 @@ def convert_ldc_annotations_to_lab(in_annotations_list=None, annotations_dir=Non
                 start_time = float(fields[2])/time_unit
                 end_time = float(fields[3])/time_unit
             except:
+                print "Error"
                 print '{} {}'.format(orig_annotation, ln)
                 raise
             lbl = fields[4]
@@ -114,6 +115,7 @@ def convert_ldc_annotations_to_lab(in_annotations_list=None, annotations_dir=Non
                 try:
                     lbl = label_class_mapping[lbl]
                 except:
+                    print "Error"
                     print('{} {}'.format(orig_annotation, lbl))
                     raise
             # There could be consecutive segments with the same label

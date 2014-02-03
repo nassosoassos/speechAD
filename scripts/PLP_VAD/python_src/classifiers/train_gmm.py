@@ -116,7 +116,7 @@ def train_gmm_set(model_list, training_list, lab_dir, model_dir, orig_model_file
         model_file = os.path.join(model_dir,'hmmdef')
     assert(os.path.exists(model_file))
 
-    print "Trained for a single iteration"
+    #print "Trained for a single iteration"
 
     if min_var_macro != None and os.path.exists(min_var_macro):
         args = ['-u','mvwt','-S',training_list,'-L',lab_dir,'-H',model_file,
@@ -127,8 +127,8 @@ def train_gmm_set(model_list, training_list, lab_dir, model_dir, orig_model_file
 
     # Ideally a convergence criterion should be applied instead
     for iter in range(1,n_train_iterations):
-        print "Iteration {0}/{1}".format(iter, n_train_iterations)
-        print args
+        #print "Iteration {0}/{1}".format(iter, n_train_iterations)
+        #print args
         herest.herest(args)
 
 def train_gmm_file(model_file, model_list, training_list, lab_dir, model_dir, n_iterations=3):

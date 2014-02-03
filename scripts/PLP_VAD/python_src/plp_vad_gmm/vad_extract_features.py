@@ -149,8 +149,9 @@ def fea_extract(file_list,fea_type,n_coefs,output_dir,samp_period=0.01,win_lengt
     HTK_config['WINDOWSIZE'] = int(1e7*win_length)
     HTK_config['USEHAMMING'] = 'T'
     HTK_config['PREEMCOEF'] = 0.97
-    HTK_config['NUMCHANS'] = 24
+    HTK_config['NUMCHANS'] = 32
     HTK_config['CEPLIFTER'] = 22
+    HTK_config['ENORMALISE'] = 'F'
     if re.search('_A',fea_type) and re.search('_D',fea_type):
         num_ceps = n_coefs / 3
     elif re.search('_D', fea_type):
@@ -161,7 +162,7 @@ def fea_extract(file_list,fea_type,n_coefs,output_dir,samp_period=0.01,win_lengt
         num_ceps = num_ceps - 1
 
     HTK_config['NUMCEPS'] = num_ceps
-    HTK_config['USEPOWER'] = 'T'
+    HTK_config['USEPOWER'] = 'F'
     HTK_config['LPCORDER'] = 12
     HTK_config['SOURCEKIND'] = 'WAVEFORM'
     HTK_config['SOURCEFORMAT'] = 'WAVE'
